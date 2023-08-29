@@ -1,0 +1,16 @@
+version: '24.0.5'
+
+networks:
+  default:
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: ecocalculator
+    ports:
+      - 3306:3306
+    volumes:
+      - "./.data/db:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: ecodbpass
+      MYSQL_DATABASE: ecocalculatordb
