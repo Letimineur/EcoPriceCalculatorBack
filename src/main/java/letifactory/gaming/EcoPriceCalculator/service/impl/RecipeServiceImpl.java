@@ -4,7 +4,7 @@ import jakarta.transaction.Transactional;
 import letifactory.gaming.EcoPriceCalculator.model.dto.CompleteRecipe;
 import letifactory.gaming.EcoPriceCalculator.model.entity.EcoRecipe;
 import letifactory.gaming.EcoPriceCalculator.model.entity.EcoRecipeItem;
-import letifactory.gaming.EcoPriceCalculator.model.repository.impl.RecipeItemRepository;
+import letifactory.gaming.EcoPriceCalculator.model.repository.RecipeItemRepository;
 import letifactory.gaming.EcoPriceCalculator.model.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.GeneratedColumn;
 
 @Getter
 @NoArgsConstructor
@@ -13,10 +14,11 @@ import lombok.NoArgsConstructor;
 @Entity
 public class EcoRecipeItem {
     @Id
+    @Column(columnDefinition = "nvarchar(101)")
+    private String nameId;
     @ManyToOne(optional = false)
     @JoinColumn(name = "recipe", nullable = false)
     private EcoRecipe ecoRecipe;
-    @Id
     @ManyToOne(optional = false)
     @JoinColumn(name = "item", nullable = false)
     private EcoItem ecoItem;
