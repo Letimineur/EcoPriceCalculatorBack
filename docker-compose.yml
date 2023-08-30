@@ -4,6 +4,17 @@ networks:
   default:
 
 services:
+  services:
+    sql-server-db:
+      container_name: sql-server-db
+      image: microsoft/mssql-server-linux:2022-latest
+      ports:
+        - "1433:1433"
+      volumes:
+        - "./.data/db:/var/lib/mssql"
+      environment:
+        SA_PASSWORD: "root"
+        ACCEPT_EULA: "Y"
   db:
     image: mysql:8.0
     container_name: ecocalculator

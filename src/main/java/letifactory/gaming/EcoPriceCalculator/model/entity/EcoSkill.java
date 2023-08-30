@@ -1,22 +1,20 @@
 package letifactory.gaming.EcoPriceCalculator.model.entity;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 
 @Entity
-public class ItemType {
-
+public class EcoSkill {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
-    private String type;
-    @NotNull
-    @Column(columnDefinition = "DECIMAL(5,2)")
-    private double taxe;
+    private String name;
 }

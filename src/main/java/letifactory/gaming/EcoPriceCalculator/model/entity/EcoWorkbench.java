@@ -10,13 +10,13 @@ import lombok.*;
 @AllArgsConstructor
 
 @Entity
-public class Workbench {
+public class EcoWorkbench {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
     private String name;
     @NotNull
     @ManyToOne
     @JoinColumn(name = "skill")
-    private Skill skill;
+    private EcoSkill ecoSkill;
 
 }

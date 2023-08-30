@@ -16,8 +16,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-@Table(name = "Users")
-public class User {
+public class EcoUser {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
     private String login;

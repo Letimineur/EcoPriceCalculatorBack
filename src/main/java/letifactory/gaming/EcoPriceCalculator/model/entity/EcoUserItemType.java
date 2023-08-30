@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Entity
-public class UserItemType {
+public class EcoUserItemType {
 
     @Id
     @ManyToOne(optional = false)
     @JoinColumn(name = "type", nullable = false)
-    private ItemType type;
+    private EcoItemType type;
     @NotNull
     @Column(columnDefinition = "DECIMAL(5,2)")
     private double profit;

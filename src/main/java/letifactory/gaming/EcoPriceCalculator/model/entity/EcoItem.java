@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Entity
-public class Item {
+public class EcoItem {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
     private String name;
@@ -20,9 +20,9 @@ public class Item {
     private double price;
     @ManyToOne
     @JoinColumn(name = "type")
-    private ItemType type;
+    private EcoItemType type;
     @ManyToOne
     @JoinColumn(name = "source")
-    private Skill source;
+    private EcoSkill source;
 
 }

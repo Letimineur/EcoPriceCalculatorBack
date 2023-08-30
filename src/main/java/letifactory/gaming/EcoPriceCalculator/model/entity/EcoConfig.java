@@ -15,7 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-public class Config {
+public class EcoConfig {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
     private String name;

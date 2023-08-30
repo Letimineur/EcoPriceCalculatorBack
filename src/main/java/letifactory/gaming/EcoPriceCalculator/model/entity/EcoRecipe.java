@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Entity
-public class Recipe {
+public class EcoRecipe {
     @Id
     @Column(columnDefinition = "nvarchar(50)")
     private String name;
@@ -18,8 +18,8 @@ public class Recipe {
     private Integer labor;
     @ManyToOne
     @JoinColumn(name = "workbench")
-    private Workbench workbench;
+    private EcoWorkbench ecoWorkbench;
     @ManyToOne
     @JoinColumn(name = "skill")
-    private Skill skill;
+    private EcoSkill ecoSkill;
 }

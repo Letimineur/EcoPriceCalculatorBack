@@ -11,16 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Entity
-public class RecipeItem {
+public class EcoUserItem {
+
     @Id
     @ManyToOne(optional = false)
-    @JoinColumn(name = "recipe", nullable = false)
-    private Recipe recipe;
-    @Id
-    @ManyToOne(optional = false)
-    @JoinColumn(name = "item", nullable = false)
-    private Item item;
+    @JoinColumn(name = "name", nullable = false)
+    private EcoItem name;
     @NotNull
-    @Column(columnDefinition = "decimal(5,0)")
-    private Integer quantity;
+    @Column(columnDefinition = "DECIMAL(18,2)")
+    private double price;
 }
