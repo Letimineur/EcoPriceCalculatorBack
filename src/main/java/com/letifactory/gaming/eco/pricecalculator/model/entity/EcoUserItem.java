@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@IdClass(value = EcoItem.class)
+
 public class EcoUserItem {
 
     @ManyToOne(optional = false)

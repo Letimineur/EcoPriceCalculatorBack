@@ -1,0 +1,34 @@
+[
+  {
+    "type": "raw",
+    "taxe": "5.0"
+  },
+  {
+    "type": "basic",
+    "taxe": "5.0"
+  },
+  {
+    "type": "advanced",
+    "taxe": "10.0"
+  },
+  {
+    "type": "modern",
+    "taxe": "15.0"
+  },
+  {
+    "type": "upgrade",
+    "taxe": "20.0"
+  },
+  {
+    "type": "vehicle",
+    "taxe": "20.0"
+  },
+  {
+    "type": "workbench",
+    "taxe": "15.0"
+  },
+  {
+    "type": "domestic",
+    "taxe": "10.0"
+  }
+]

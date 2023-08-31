@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 
 @Entity
-@IdClass(value = EcoItemType.class)
+
 public class EcoUserItemType {
 
     @Id
