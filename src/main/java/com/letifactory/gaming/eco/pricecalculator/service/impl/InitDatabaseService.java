@@ -3,9 +3,8 @@ package com.letifactory.gaming.eco.pricecalculator.service.impl;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.letifactory.gaming.eco.pricecalculator.exception.FailedDatabaseInitException;
-import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItemType;
-import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoSkill;
-import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoWorkbench;
+import com.letifactory.gaming.eco.pricecalculator.model.dto.CompleteRecipe;
+import com.letifactory.gaming.eco.pricecalculator.model.entity.*;
 import com.letifactory.gaming.eco.pricecalculator.model.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,16 +22,16 @@ public class InitDatabaseService {
     private static final String SUCCESS_ADD_LOG = "Successfully added to database all %s";
     private static final String FAILED_ADD_LOG = "Failed to load %s from JSON file.";
 
-    //    @Autowired
-//    private ConfigRepository configRepository;
-//    @Autowired
-//    private ItemRepository itemRepository;
+    @Autowired
+    private ConfigRepository configRepository;
+    @Autowired
+    private ItemRepository itemRepository;
     @Autowired
     private ItemTypeRepository itemTypeRepository;
-    //    @Autowired
-//    private RecipeItemRepository recipeItemRepository;
-//    @Autowired
-//    private RecipeRepository recipeRepository;
+    @Autowired
+    private RecipeItemRepository recipeItemRepository;
+    @Autowired
+    private RecipeRepository recipeRepository;
     @Autowired
     private SkillRepository skillRepository;
     //    @Autowired
@@ -45,14 +44,39 @@ public class InitDatabaseService {
     private WorkbenchRepository workbenchRepository;
 
     public static String getJsonFilePath(String fileName) {
-        return String.format(JSONPATH,fileName);
+        return String.format(JSONPATH, fileName);
     }
 
     public void initDatabase() throws FailedDatabaseInitException {
 
+        this.intEcoConfig();
         this.initEcoSkill();
         this.initEcoWorkbench();
         this.initEcoItemType();
+        this.initEcoItem();
+        this.initRecipes();
+
+    }
+
+    private void intEcoConfig() {
+        List<EcoConfig> configs = configRepository.findAll();
+        if (configs.isEmpty()) {
+            final String ecoConfig = "EcoConfigs";
+            try {
+                configs = new ObjectMapper().readValue(
+                        new File(InitDatabaseService.getJsonFilePath(ecoConfig)),
+                        new TypeReference<>() {
+                        });
+                configs.forEach(cfg -> {
+                    System.out.println(String.format(ADDING_LOG, cfg.getName()));
+                    configRepository.save(cfg);
+                    System.out.println(ADDED_LOG);
+                });
+                System.out.println(String.format(SUCCESS_ADD_LOG, ecoConfig));
+            } catch (IOException e) {
+                throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoConfig), e);
+            }
+        }
     }
 
     private void initEcoSkill() {
@@ -118,4 +142,49 @@ public class InitDatabaseService {
         }
     }
 
+    private void initEcoItem() {
+        List<EcoItem> items = itemRepository.findAll();
+        if (items.isEmpty()) {
+            final String ecoItem = "EcoItems";
+            try {
+                items = new ObjectMapper().readValue(
+                        new File(InitDatabaseService.getJsonFilePath(ecoItem)),
+                        new TypeReference<>() {
+                        });
+                items.forEach(item -> {
+                    System.out.println(String.format(ADDING_LOG, item.getName()));
+                    itemRepository.save(item);
+                    System.out.println(ADDED_LOG);
+                });
+                System.out.println(String.format(SUCCESS_ADD_LOG, ecoItem));
+            } catch (IOException e) {
+                throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoItem), e);
+            }
+        }
+    }
+
+    private void initRecipes() {
+        List<EcoRecipe> recipes = recipeRepository.findAll();
+        if (recipes.isEmpty()) {
+            final String ecoRecipes = "EcoRecipes";
+            try {
+                List<CompleteRecipe> cptRecipes = new ObjectMapper().readValue(
+                        new File(InitDatabaseService.getJsonFilePath(ecoRecipes)),
+                        new TypeReference<>() {
+                        });
+                cptRecipes.forEach(completeRecipe -> {
+                    System.out.println(String.format(ADDING_LOG, completeRecipe.getRecipe().getName()));
+                    recipeRepository.save(completeRecipe.getRecipe());
+                    completeRecipe.getRecipeItems().forEach(itemRecipe -> {
+                        System.out.println(String.format(ADDING_LOG, itemRecipe.getNameId()));
+                        recipeItemRepository.save(itemRecipe);
+                    });
+                    System.out.println(ADDED_LOG);
+                });
+                System.out.println(String.format(SUCCESS_ADD_LOG, ecoRecipes));
+            } catch (IOException e) {
+                throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoRecipes), e);
+            }
+        }
+    }
 }

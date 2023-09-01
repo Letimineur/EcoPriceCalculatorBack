@@ -14,9 +14,8 @@ import lombok.NoArgsConstructor;
 public class EcoItemType {
 
     @Id
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String type;
-    @NotNull
-    @Column(columnDefinition = "DECIMAL(5,2)")
+    @Column(columnDefinition = "DECIMAL(5,2)",nullable = false)
     private double taxe;
 }

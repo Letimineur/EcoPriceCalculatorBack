@@ -18,7 +18,6 @@ public class EcoUserItemType {
     @ManyToOne(optional = false)
     @JoinColumn(name = "type", nullable = false)
     private EcoItemType type;
-    @NotNull
-    @Column(columnDefinition = "DECIMAL(5,2)")
+    @Column(columnDefinition = "DECIMAL(5,2)",nullable = false)
     private double profit;
 }

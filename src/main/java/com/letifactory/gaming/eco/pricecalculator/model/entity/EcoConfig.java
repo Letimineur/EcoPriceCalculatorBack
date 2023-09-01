@@ -17,9 +17,8 @@ import lombok.Setter;
 @Entity
 public class EcoConfig {
     @Id
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String name;
-    @NotNull
-    @Column(columnDefinition = "decimal(18,2)")
+    @Column(columnDefinition = "decimal(18,2)",nullable = false)
     private double value;
 }

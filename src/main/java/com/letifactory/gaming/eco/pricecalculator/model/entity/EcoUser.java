@@ -18,15 +18,12 @@ import lombok.Setter;
 @Entity
 public class EcoUser {
     @Id
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String login;
-    @NotNull
-    @Column(columnDefinition = "nvarchar(250)")
+    @Column(columnDefinition = "nvarchar(250)",nullable = false)
     private String password;
-    @NotNull
-    @Column(columnDefinition= "bit default 0")
+    @Column(columnDefinition= "bit default 0",nullable = false)
     private boolean isAdmin;
-    @NotNull
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String resetPWDPhrase;
 }

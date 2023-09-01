@@ -1,7 +1,10 @@
 package com.letifactory.gaming.eco.pricecalculator.model.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipeItem;
+import com.letifactory.gaming.eco.pricecalculator.utils.json.CompleteRecipeDeserializer;
+import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoItemDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
+@JsonDeserialize(using = CompleteRecipeDeserializer.class)
 public class CompleteRecipe {
 
     private EcoRecipe recipe;

@@ -18,6 +18,6 @@ import lombok.NoArgsConstructor;
 @JsonDeserialize(using = EcoSkillDeserializer.class)
 public class EcoSkill {
     @Id
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String name;
 }

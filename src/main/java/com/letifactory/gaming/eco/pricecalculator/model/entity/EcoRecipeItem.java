@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class EcoRecipeItem {
     @Id
-    @Column(columnDefinition = "nvarchar(101)")
+    @Column(columnDefinition = "nvarchar(101)",nullable = false)
     private String nameId;
     @ManyToOne(optional = false)
     @JoinColumn(name = "recipe", nullable = false)
@@ -21,8 +21,7 @@ public class EcoRecipeItem {
     @ManyToOne(optional = false)
     @JoinColumn(name = "item", nullable = false)
     private EcoItem ecoItem;
-    @NotNull
-    @Column(columnDefinition = "decimal(5,0)")
+    @Column(columnDefinition = "decimal(5,0)",nullable = false)
     private Integer quantity;
 
     @NotNull

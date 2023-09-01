@@ -19,6 +19,6 @@ public class EcoUserItem {
     private EcoItem name;
 
     @NotNull
-    @Column(columnDefinition = "DECIMAL(18,2)")
+    @Column(columnDefinition = "DECIMAL(18,2)",nullable = false)
     private double price;
 }

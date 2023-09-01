@@ -16,7 +16,7 @@ import lombok.*;
 @JsonDeserialize(using = EcoWorkbenchDeserializer.class)
 public class EcoWorkbench {
     @Id
-    @Column(columnDefinition = "nvarchar(50)")
+    @Column(columnDefinition = "nvarchar(50)",nullable = false)
     private String name;
 
 }
