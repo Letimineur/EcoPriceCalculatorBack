@@ -38,13 +38,15 @@ public class CompleteRecipeDeserializer extends StdDeserializer<CompleteRecipe> 
         inputNodes.forEach(item->{
             String itemName= item.get("item").asText();
             Integer qty= item.get("quantity").asInt();
-            items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType),qty,false));
+            boolean reducible=item.get("reducible").asBoolean();
+            items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType,"",0,0),qty,reducible,false));
         });
         ArrayNode outputNodes = (ArrayNode) node.get("outputs");
         outputNodes.forEach(item->{
             String itemName= item.get("item").asText();
             Integer qty= item.get("quantity").asInt();
-            items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType),qty,true));
+            boolean reducible=item.get("reducible").asBoolean();
+            items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType,"",0,0),qty,reducible,true));
         });
         return completeRecipe;
     }

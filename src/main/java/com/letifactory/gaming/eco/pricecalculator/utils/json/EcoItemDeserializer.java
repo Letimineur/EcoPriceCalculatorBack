@@ -14,7 +14,6 @@ public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
 
     public EcoItemDeserializer(){
         this(null);
-
     }
     public EcoItemDeserializer(final Class<?> vc) {
         super(vc);
@@ -25,7 +24,23 @@ public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
             throws IOException {
         JsonNode node = jsonParser.getCodec().readTree(jsonParser);
         String name = node.get("nameID").asText();
+        String itemType = node.get("type").asText();
+        JsonNode imgFileNode = node.get("imageFile");
+        JsonNode xPosNode = node.get("xPos");
+        JsonNode yPosNode = node.get("yPos");
+        int xPos = -1;
+        int yPos = -1;
+        String imgFile = "";
+        if(xPosNode !=null){
+            xPos=xPosNode.asInt();
+        }
+        if(yPosNode!=null){
+            yPos=yPosNode.asInt();
+        }
+        if(imgFileNode!=null){
+            imgFile = imgFileNode.asText();
+        }
 
-        return new EcoItem(name,0.0,new EcoItemType("raw",0));
+        return new EcoItem(name,0.0,new EcoItemType(itemType,0),imgFile,xPos,yPos);
     }
 }

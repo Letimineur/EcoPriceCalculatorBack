@@ -18,4 +18,9 @@ public class EcoItemType {
     private String type;
     @Column(columnDefinition = "DECIMAL(5,2)",nullable = false)
     private double taxe;
+
+    EcoItemType(String type){
+        this.type=type;
+        this.taxe=0.0;
+    }
 }

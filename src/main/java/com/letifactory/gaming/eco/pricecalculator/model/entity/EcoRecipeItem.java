@@ -23,7 +23,8 @@ public class EcoRecipeItem {
     private EcoItem ecoItem;
     @Column(columnDefinition = "decimal(5,0)",nullable = false)
     private Integer quantity;
-
+    @NotNull
+    private boolean reducible;
     @NotNull
     private boolean isOutput;
 

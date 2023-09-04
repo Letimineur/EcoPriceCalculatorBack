@@ -1,5 +1,6 @@
 package com.letifactory.gaming.eco.pricecalculator.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoItemDeserializer;
 import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoSkillDeserializer;
@@ -8,13 +9,15 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 
 @Entity
-@JsonDeserialize(using = EcoItemDeserializer.class)
+//@JsonDeserialize(using = EcoItemDeserializer.class)
 public class EcoItem {
     @Id
     @Column(columnDefinition = "nvarchar(50)",nullable = false)
@@ -24,5 +27,14 @@ public class EcoItem {
     @ManyToOne
     @JoinColumn(name = "type",nullable = false)
     private EcoItemType type;
+    @Column(columnDefinition = "nvarchar(50)")
+    private String imageFile;
+    @Column(columnDefinition = "DECIMAL(3,0)")
+    @JsonProperty(value = "xPos")
+    private int xPos;
+    @Column(columnDefinition = "DECIMAL(3,0)")
+    @JsonProperty(value = "yPos")
+    private int yPos;
+
 
 }
