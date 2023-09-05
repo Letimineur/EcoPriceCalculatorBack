@@ -1,10 +1,10 @@
 package com.letifactory.gaming.eco.pricecalculator.model.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItem;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipeItem;
 import com.letifactory.gaming.eco.pricecalculator.utils.json.CompleteRecipeDeserializer;
-import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoItemDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,4 +41,41 @@ public class CompleteRecipe {
         return input;
     }
 
-}
+    public double getSumOfInputPrice() {
+        return this.getAllInput().stream().reduce(0.0, (calc, input) -> Double.sum(calc,
+                        input.getEcoItem().getPrice()),
+                Double::sum);
+    }
+    public double getSumOfPricedOutput() {
+        return this.getOutputAlreadyPriced().stream().reduce(0.0, (calc, output) -> Double.sum(calc,
+                        output.getEcoItem().getPrice()),
+                Double::sum);
+    }
+
+    public int getNumberOfOutput() {
+        return this.getAllOutput().stream().reduce(0, (calc, outPut) -> calc + outPut.getQuantity(), Integer::sum);
+    }
+
+    public List<EcoRecipeItem> getOutputAlreadyPriced() {
+        List<EcoRecipeItem> pricedOutput = new ArrayList<>();
+        this.getAllOutput().forEach(outputs -> {
+            final EcoItem ecoItem = outputs.getEcoItem();
+            if (ecoItem.getPrice() > 0) {
+                pricedOutput.add(outputs);
+            }
+        });
+        return pricedOutput;
+    }
+
+    public List<EcoRecipeItem> geNotPricedOutput() {
+        List<EcoRecipeItem> notPricedOutput = new ArrayList<>();
+        this.getAllOutput().forEach(outputs -> {
+            final EcoItem ecoItem = outputs.getEcoItem();
+            if (ecoItem.getPrice() == 0) {
+                notPricedOutput.add(outputs);
+            }
+        });
+        return notPricedOutput;
+    }
+
+    }

@@ -1,6 +1,10 @@
 [
   {
-    "name": "RationEffortCalorie",
+    "name": "RatioEffortCalorie",
+    "value": 2.0
+  },
+  {
+    "name": "PricePerThousandCalories",
     "value": 2.0
   }
 ]

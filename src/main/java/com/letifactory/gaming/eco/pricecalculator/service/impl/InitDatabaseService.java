@@ -6,6 +6,9 @@ import com.letifactory.gaming.eco.pricecalculator.exception.FailedDatabaseInitEx
 import com.letifactory.gaming.eco.pricecalculator.model.dto.CompleteRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.*;
 import com.letifactory.gaming.eco.pricecalculator.model.repository.*;
+import com.letifactory.gaming.eco.pricecalculator.utils.AppConstantUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +19,8 @@ import java.util.List;
 @Service
 public class InitDatabaseService {
 
-    private final static String JSONPATH = "src/main/resources/static/data/%s.json";
+    private final Logger logg = LoggerFactory.getLogger(InitDatabaseService.class);
+
     private static String ADDED_LOG = "Added";
     private static final String ADDING_LOG = "Adding %s";
     private static final String SUCCESS_ADD_LOG = "Successfully added to database all %s";
@@ -43,9 +47,7 @@ public class InitDatabaseService {
     @Autowired
     private WorkbenchRepository workbenchRepository;
 
-    public static String getJsonFilePath(String fileName) {
-        return String.format(JSONPATH, fileName);
-    }
+
 
     public void initDatabase() throws FailedDatabaseInitException {
 
@@ -64,19 +66,20 @@ public class InitDatabaseService {
             final String ecoConfig = "EcoConfigs";
             try {
                 configs = new ObjectMapper().readValue(
-                        new File(InitDatabaseService.getJsonFilePath(ecoConfig)),
+                        new File(AppConstantUtils.getJsonFilePath(ecoConfig)),
                         new TypeReference<>() {
                         });
                 configs.forEach(cfg -> {
-                    System.out.println(String.format(ADDING_LOG, cfg.getName()));
+                    logg.info(String.format(ADDING_LOG, cfg.getName()));
                     configRepository.save(cfg);
-                    System.out.println(ADDED_LOG);
+                    logg.info(ADDED_LOG);
                 });
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoConfig));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoConfig));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoConfig), e);
             }
         }
+        AppConstantUtils.addAllConfigToConstant(configs);
     }
 
     private void initEcoSkill() {
@@ -84,16 +87,16 @@ public class InitDatabaseService {
         if (skills.isEmpty()) {
             final String ecoSkill = "EcoSkills";
             try {
-                skills = new ObjectMapper().readValue(new File(InitDatabaseService.getJsonFilePath(ecoSkill)),
+                skills = new ObjectMapper().readValue(new File(AppConstantUtils.getJsonFilePath(ecoSkill)),
                         new TypeReference<>() {
                         });
                 skills.forEach(skill -> {
-                            System.out.println(String.format(ADDING_LOG, skill.getName()));
+                            logg.info(String.format(ADDING_LOG, skill.getName()));
                             skillRepository.save(skill);
-                            System.out.println(ADDED_LOG);
+                            logg.info(ADDED_LOG);
                         }
                 );
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoSkill));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoSkill));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoSkill), e);
             }
@@ -106,15 +109,15 @@ public class InitDatabaseService {
             final String ecoWorkbench = "EcoWorkbenches";
             try {
                 workbenches = new ObjectMapper().readValue(
-                        new File(InitDatabaseService.getJsonFilePath(ecoWorkbench)),
+                        new File(AppConstantUtils.getJsonFilePath(ecoWorkbench)),
                         new TypeReference<>() {
                         });
                 workbenches.forEach(wb -> {
-                    System.out.println(String.format(ADDING_LOG, wb.getName()));
+                    logg.info(String.format(ADDING_LOG, wb.getName()));
                     workbenchRepository.save(wb);
-                    System.out.println(ADDED_LOG);
+                    logg.info(ADDED_LOG);
                 });
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoWorkbench));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoWorkbench));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoWorkbench), e);
             }
@@ -127,19 +130,21 @@ public class InitDatabaseService {
             final String ecoItemType = "EcoItemTypes";
             try {
                 itemTypes = new ObjectMapper().readValue(
-                        new File(InitDatabaseService.getJsonFilePath(ecoItemType)),
+                        new File(AppConstantUtils.getJsonFilePath(ecoItemType)),
                         new TypeReference<>() {
                         });
                 itemTypes.forEach(itt -> {
-                    System.out.println(String.format(ADDING_LOG, itt.getType()));
+                    logg.info(String.format(ADDING_LOG, itt.getType()));
                     itemTypeRepository.save(itt);
-                    System.out.println(ADDED_LOG);
+                    logg.info(ADDED_LOG);
                 });
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoItemType));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoItemType));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoItemType), e);
             }
         }
+        //Init allType constant for later use
+        AppConstantUtils.addAllTypeToConstant(itemTypes);
     }
 
     private void initEcoItem() {
@@ -148,15 +153,15 @@ public class InitDatabaseService {
             final String ecoItem = "EcoItems";
             try {
                 items = new ObjectMapper().readValue(
-                        new File(InitDatabaseService.getJsonFilePath(ecoItem)),
+                        new File(AppConstantUtils.getJsonFilePath(ecoItem)),
                         new TypeReference<>() {
                         });
                 items.forEach(item -> {
-                    System.out.println(String.format(ADDING_LOG, item.getName()));
+                    logg.info(String.format(ADDING_LOG, item.getName()));
                     itemRepository.save(item);
-                    System.out.println(ADDED_LOG);
+                    logg.info(ADDED_LOG);
                 });
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoItem));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoItem));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoItem), e);
             }
@@ -169,19 +174,19 @@ public class InitDatabaseService {
             final String ecoRecipes = "EcoRecipes";
             try {
                 List<CompleteRecipe> cptRecipes = new ObjectMapper().readValue(
-                        new File(InitDatabaseService.getJsonFilePath(ecoRecipes)),
+                        new File(AppConstantUtils.getJsonFilePath(ecoRecipes)),
                         new TypeReference<>() {
                         });
                 cptRecipes.forEach(completeRecipe -> {
-                    System.out.println(String.format(ADDING_LOG, completeRecipe.getRecipe().getName()));
+                    logg.info(String.format(ADDING_LOG, completeRecipe.getRecipe().getName()));
                     recipeRepository.save(completeRecipe.getRecipe());
                     completeRecipe.getRecipeItems().forEach(itemRecipe -> {
-                        System.out.println(String.format(ADDING_LOG, itemRecipe.getNameId()));
+                        logg.info(String.format(ADDING_LOG, itemRecipe.getNameId()));
                         recipeItemRepository.save(itemRecipe);
                     });
-                    System.out.println(ADDED_LOG);
+                    logg.info(ADDED_LOG);
                 });
-                System.out.println(String.format(SUCCESS_ADD_LOG, ecoRecipes));
+                logg.info(String.format(SUCCESS_ADD_LOG, ecoRecipes));
             } catch (IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoRecipes), e);
             }

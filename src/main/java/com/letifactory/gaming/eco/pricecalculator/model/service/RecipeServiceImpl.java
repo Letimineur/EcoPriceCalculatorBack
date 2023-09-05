@@ -1,4 +1,4 @@
-package com.letifactory.gaming.eco.pricecalculator.service.impl;
+package com.letifactory.gaming.eco.pricecalculator.model.service;
 
 import jakarta.transaction.Transactional;
 import com.letifactory.gaming.eco.pricecalculator.model.dto.CompleteRecipe;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -34,9 +35,22 @@ public class RecipeServiceImpl {
         return retItems;
     }
 
-    public CompleteRecipe getCompleteRecipe(String recipeName){
-        final Optional<EcoRecipe> optRecipe = recipeRepository.findById(recipeName);
-        return null;
+    public CompleteRecipe getCompleteRecipe(String recipeName)throws NoSuchElementException{
+        final Optional<CompleteRecipe> optRecipe = recipeRepository.getCompleteRecipeByName(recipeName);
+        if(optRecipe.isPresent()){
+            return optRecipe.get();
+        }else{
+         throw new NoSuchElementException("No recipe found for "+recipeName);
+        }
+    }
+
+    public List<CompleteRecipe> getAllRecipesCratingItem(String itemName){
+        List<CompleteRecipe> craftingRecipe = new ArrayList<>();
+        List<String> recipeNames = this.recipeItemRepository.getAllRecipesCratingItem(itemName);
+        recipeNames.forEach(recipe -> {
+            craftingRecipe.add(this.getCompleteRecipe(recipe));
+        });
+        return craftingRecipe;
     }
 
 }

@@ -1,4 +1,4 @@
-package com.letifactory.gaming.eco.pricecalculator.service.impl;
+package com.letifactory.gaming.eco.pricecalculator.model.service;
 
 import jakarta.transaction.Transactional;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoConfig;

@@ -20,12 +20,12 @@ import lombok.Setter;
 //@JsonDeserialize(using = EcoItemDeserializer.class)
 public class EcoItem {
     @Id
-    @Column(columnDefinition = "nvarchar(50)",nullable = false)
+    @Column(columnDefinition = "nvarchar(50)", nullable = false)
     private String name;
-    @Column(columnDefinition = "DECIMAL(18,2)",nullable = false)
+    @Column(columnDefinition = "DECIMAL(18,2)", nullable = false)
     private double price;
     @ManyToOne
-    @JoinColumn(name = "type",nullable = false)
+    @JoinColumn(name = "type", nullable = false)
     private EcoItemType type;
     @Column(columnDefinition = "nvarchar(50)")
     private String imageFile;
@@ -36,5 +36,13 @@ public class EcoItem {
     @JsonProperty(value = "yPos")
     private int yPos;
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("ItemName: ").append(getName())
+                .append(" type: ").append(getType().getType())
+                .append(" price: ").append(getPrice());
+        return builder.toString();
+    }
 
 }

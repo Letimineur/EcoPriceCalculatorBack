@@ -41,6 +41,6 @@ public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
             imgFile = imgFileNode.asText();
         }
 
-        return new EcoItem(name,0.0,new EcoItemType(itemType,0),imgFile,xPos,yPos);
+        return new EcoItem(name,0.0,new EcoItemType(itemType),imgFile,xPos,yPos);
     }
 }

@@ -10,15 +10,16 @@ import org.springframework.context.event.EventListener;
 @SpringBootApplication
 public class EcoPriceCalculatorApplication {
 
-	@Autowired
-	private InitDatabaseService initDatabaseService;
-	public static void main(String[] args) {
-		SpringApplication.run(EcoPriceCalculatorApplication.class, args);
-	}
+    @Autowired
+    private InitDatabaseService initDatabaseService;
 
-	@EventListener(ApplicationReadyEvent.class)
-	private void initDatabase(){
-		this.initDatabaseService.initDatabase();
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(EcoPriceCalculatorApplication.class, args);
+    }
+
+    @EventListener(ApplicationReadyEvent.class)
+    private void initAppDataAndConstant() {
+        this.initDatabaseService.initDatabase();
+    }
 
 }
