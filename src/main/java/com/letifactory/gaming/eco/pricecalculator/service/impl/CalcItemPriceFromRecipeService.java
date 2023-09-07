@@ -69,20 +69,20 @@ public class CalcItemPriceFromRecipeService {
 
     public Map<String, Double> calcItemsPriceFromOneRecipe(final CompleteRecipe completeRecipe) {
         final Map<String, Double> itemsPrice = new HashMap<>();
-        final List<EcoRecipeItem> pricedOutputs = completeRecipe.getOutputAlreadyPriced();
         final double numberOfOutput = completeRecipe.getNumberOfOutput();
         final double laborPerOutput = (double) completeRecipe.getRecipe().getLabor() / numberOfOutput;
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
         final List<EcoItem> notPricedInputItem = allInput.stream().filter(input -> input.getEcoItem().getPrice() == 0).map(input -> input.getEcoItem()).collect(Collectors.toList());
         notPricedInputItem.forEach(item -> {
-            logg.info("Recipe inputItem must be priced first "+item);
+            System.out.println(completeRecipe.getRecipe().getName());
+            logg.info("Recipe inputItem must be priced first " + item);
             this.updatePriceForItem(item);
         });
 
         final double sumOfInputPrice = allInput.stream().reduce(0.0, (calc, input) -> Double.sum(calc,
                         input.getEcoItem().getPrice()),
                 Double::sum);
-        if (pricedOutputs.isEmpty()) {
+        if (isNotFeedBackRecipe(completeRecipe)) {
             completeRecipe.getAllOutput().forEach(output -> {
                 final double outputBasePrice = (sumOfInputPrice *
                         output.getQuantity() / numberOfOutput) / output.getQuantity();
@@ -102,6 +102,15 @@ public class CalcItemPriceFromRecipeService {
         }
         return itemsPrice;
     }
+
+    private boolean isNotFeedBackRecipe(final CompleteRecipe completeRecipe) {
+        final String recipeName = completeRecipe.getRecipe().getName();
+        if (AppConstantUtils.FEEDBACK_RECIPE.stream().filter(recipe -> recipe.equals(recipeName)).findFirst().isPresent()) {
+            return false;
+        }
+        return true;
+    }
+
 
     private double addTaxeAndCaloriesToPrice(final double itemPrice, final double laborPerOutput, final EcoItem item) {
         return (itemPrice + AppConstantUtils.getLaborPrice(laborPerOutput)) * item.getType().getTaxeMultiplicator();

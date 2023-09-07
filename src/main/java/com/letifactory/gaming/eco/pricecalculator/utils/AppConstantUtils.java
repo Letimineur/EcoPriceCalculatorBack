@@ -3,15 +3,15 @@ package com.letifactory.gaming.eco.pricecalculator.utils;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoConfig;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItemType;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AppConstantUtils {
     public final static String JSONPATH = "src/main/resources/static/data/%s.json";
 
     public final static Map<Integer, String> ALL_TYPES = new HashMap<>();
     public final static Map<String, Double> ALL_CONFIG = new HashMap<>();
+
+    public final static List<String> FEEDBACK_RECIPE = new ArrayList<>(Arrays.asList("Plastic","SyntheticRubber","Nylon","Epoxy"));
 
     public static String getJsonFilePath(final String fileName) {
         return String.format(AppConstantUtils.JSONPATH, fileName);
