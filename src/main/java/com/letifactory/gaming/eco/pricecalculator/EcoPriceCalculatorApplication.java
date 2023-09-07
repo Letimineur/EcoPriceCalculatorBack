@@ -13,7 +13,7 @@ public class EcoPriceCalculatorApplication {
     @Autowired
     private InitDatabaseService initDatabaseService;
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(EcoPriceCalculatorApplication.class, args);
     }
 

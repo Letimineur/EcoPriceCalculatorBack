@@ -25,27 +25,27 @@ public class CompleteRecipeDeserializer extends StdDeserializer<CompleteRecipe> 
     @Override
     public CompleteRecipe deserialize(final JsonParser jsonParser, final DeserializationContext deserializationContext)
             throws IOException {
-        JsonNode node = jsonParser.getCodec().readTree(jsonParser);
-        String recipeName = node.get("nameID").asText();
-        Integer labor = node.get("labor").asInt();
+        final JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+        final String recipeName = node.get("nameID").asText();
+        final Integer labor = node.get("labor").asInt();
 
-        List<EcoRecipeItem> items = new ArrayList<>();
+        final List<EcoRecipeItem> items = new ArrayList<>();
         final EcoRecipe recipe = new EcoRecipe(recipeName, labor, new EcoWorkbench(node.get("craftingTable").asText()), new EcoSkill(node.get("skill").asText()));
-        CompleteRecipe completeRecipe = new CompleteRecipe(recipe,items);
-        EcoItemType itemType = new EcoItemType();
+        final CompleteRecipe completeRecipe = new CompleteRecipe(recipe,items);
+        final EcoItemType itemType = new EcoItemType();
 
-        ArrayNode inputNodes = (ArrayNode) node.get("ingredients");
+        final ArrayNode inputNodes = (ArrayNode) node.get("ingredients");
         inputNodes.forEach(item->{
-            String itemName= item.get("item").asText();
-            Integer qty= item.get("quantity").asInt();
-            boolean reducible=item.get("reducible").asBoolean();
+            final String itemName= item.get("item").asText();
+            final Double qty= item.get("quantity").asDouble();
+            final boolean reducible=item.get("reducible").asBoolean();
             items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType,"",0,0),qty,reducible,false));
         });
-        ArrayNode outputNodes = (ArrayNode) node.get("outputs");
+        final ArrayNode outputNodes = (ArrayNode) node.get("outputs");
         outputNodes.forEach(item->{
-            String itemName= item.get("item").asText();
-            Integer qty= item.get("quantity").asInt();
-            boolean reducible=item.get("reducible").asBoolean();
+            final String itemName= item.get("item").asText();
+            final Double qty= item.get("quantity").asDouble();
+            final boolean reducible=item.get("reducible").asBoolean();
             items.add(new EcoRecipeItem(recipeName+"_"+itemName,recipe,new EcoItem(itemName,0.0,itemType,"",0,0),qty,reducible,true));
         });
         return completeRecipe;

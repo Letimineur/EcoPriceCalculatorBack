@@ -1,7 +1,7 @@
 [
   {
     "name": "AcornItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 7,
@@ -185,7 +185,7 @@
   },
   {
     "name": "Advanced Research",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 15,
@@ -297,7 +297,7 @@
   },
   {
     "name": "AgaveLeavesItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 6,
@@ -313,7 +313,7 @@
   },
   {
     "name": "AgoutiCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 7,
@@ -345,7 +345,7 @@
   },
   {
     "name": "AlligatorCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 8,
@@ -353,7 +353,7 @@
   },
   {
     "name": "AmanitaMushroomsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 13,
@@ -369,7 +369,7 @@
   },
   {
     "name": "AmendmentsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 0,
@@ -377,7 +377,7 @@
   },
   {
     "name": "Animal",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -393,7 +393,7 @@
   },
   {
     "name": "ArcticWillowSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -409,7 +409,7 @@
   },
   {
     "name": "ArrowItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 9,
@@ -897,7 +897,7 @@
   },
   {
     "name": "AxeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -969,7 +969,7 @@
   },
   {
     "name": "BakedVegetable",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 6,
@@ -993,7 +993,7 @@
   },
   {
     "name": "BallotBoxItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 2,
@@ -1033,7 +1033,7 @@
   },
   {
     "name": "BarrelCactusSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1049,7 +1049,7 @@
   },
   {
     "name": "BasaltItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 8,
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "Basic Research",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 0,
@@ -1065,7 +1065,7 @@
   },
   {
     "name": "BasicBackpackItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1129,7 +1129,7 @@
   },
   {
     "name": "BassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1153,7 +1153,7 @@
   },
   {
     "name": "BeansItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 10,
@@ -1201,7 +1201,7 @@
   },
   {
     "name": "BeetGreensItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 1,
@@ -1209,7 +1209,7 @@
   },
   {
     "name": "BeetItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 8,
@@ -1241,7 +1241,7 @@
   },
   {
     "name": "BigBluestemSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1249,7 +1249,7 @@
   },
   {
     "name": "BighornCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 0,
@@ -1265,7 +1265,7 @@
   },
   {
     "name": "BirchLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -1273,7 +1273,7 @@
   },
   {
     "name": "BirchSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1281,7 +1281,7 @@
   },
   {
     "name": "BisonCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 1,
@@ -1313,7 +1313,7 @@
   },
   {
     "name": "Block",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1337,7 +1337,7 @@
   },
   {
     "name": "BlueSharkItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 3,
@@ -1345,7 +1345,7 @@
   },
   {
     "name": "BoardItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 10,
@@ -1353,7 +1353,7 @@
   },
   {
     "name": "BoardOfElectionsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 5,
@@ -1393,7 +1393,7 @@
   },
   {
     "name": "BoleteMushroomsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 12,
@@ -1417,7 +1417,7 @@
   },
   {
     "name": "BowItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1433,7 +1433,7 @@
   },
   {
     "name": "Bread",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 11,
@@ -1505,7 +1505,7 @@
   },
   {
     "name": "BullrushSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1513,7 +1513,7 @@
   },
   {
     "name": "BunchgrassSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1561,7 +1561,7 @@
   },
   {
     "name": "CamasBulbItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 2,
@@ -1617,7 +1617,7 @@
   },
   {
     "name": "CampfireSalad",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 8,
@@ -1625,7 +1625,7 @@
   },
   {
     "name": "CampfireSaladItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1633,7 +1633,7 @@
   },
   {
     "name": "CampfireStewItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1657,7 +1657,7 @@
   },
   {
     "name": "CapitolItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 0,
@@ -1729,7 +1729,7 @@
   },
   {
     "name": "CedarLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -1737,7 +1737,7 @@
   },
   {
     "name": "CedarSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1745,7 +1745,7 @@
   },
   {
     "name": "CeibaLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -1753,7 +1753,7 @@
   },
   {
     "name": "CeibaSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -1793,7 +1793,7 @@
   },
   {
     "name": "CensusBureauItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 1,
@@ -1817,7 +1817,7 @@
   },
   {
     "name": "ChairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 13,
@@ -2001,7 +2001,7 @@
   },
   {
     "name": "ClamItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 10,
@@ -2009,7 +2009,7 @@
   },
   {
     "name": "ClayItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -2033,7 +2033,7 @@
   },
   {
     "name": "Clothes",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -2057,7 +2057,7 @@
   },
   {
     "name": "Coal",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 11,
@@ -2065,7 +2065,7 @@
   },
   {
     "name": "CoalItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 5,
@@ -2073,7 +2073,7 @@
   },
   {
     "name": "CodItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -2641,7 +2641,7 @@
   },
   {
     "name": "CompostItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 2,
@@ -2657,7 +2657,7 @@
   },
   {
     "name": "Concrete",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 11,
@@ -2665,7 +2665,7 @@
   },
   {
     "name": "ConstructionPostItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 8,
@@ -2673,7 +2673,7 @@
   },
   {
     "name": "ContractBoardItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 4,
@@ -2681,7 +2681,7 @@
   },
   {
     "name": "CookeinaMushroomsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 6,
@@ -2721,7 +2721,7 @@
   },
   {
     "name": "CopperOreItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 11,
@@ -2761,7 +2761,7 @@
   },
   {
     "name": "CornItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 9,
@@ -2817,7 +2817,7 @@
   },
   {
     "name": "CottonBollItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 3,
@@ -2881,7 +2881,7 @@
   },
   {
     "name": "CourtItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 3,
@@ -2889,7 +2889,7 @@
   },
   {
     "name": "CoyoteCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 2,
@@ -2897,7 +2897,7 @@
   },
   {
     "name": "CrabCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 4,
@@ -2913,7 +2913,7 @@
   },
   {
     "name": "Crafting Table",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -2929,7 +2929,7 @@
   },
   {
     "name": "CreosoteBushSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -2937,7 +2937,7 @@
   },
   {
     "name": "CriminiMushroomsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 14,
@@ -2969,7 +2969,7 @@
   },
   {
     "name": "Crop",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 15,
@@ -2977,7 +2977,7 @@
   },
   {
     "name": "CropSeed",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 9,
@@ -2993,7 +2993,7 @@
   },
   {
     "name": "CrushedCoalItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3057,7 +3057,7 @@
   },
   {
     "name": "CrushedOilShaleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3065,7 +3065,7 @@
   },
   {
     "name": "CrushedRock",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 1,
@@ -3097,7 +3097,7 @@
   },
   {
     "name": "CrushedStoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3145,7 +3145,7 @@
   },
   {
     "name": "DeerCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 2,
@@ -3185,7 +3185,7 @@
   },
   {
     "name": "DirtItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 7,
@@ -3193,7 +3193,7 @@
   },
   {
     "name": "DirtRampItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 14,
@@ -3209,7 +3209,7 @@
   },
   {
     "name": "DoorItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 10,
@@ -3217,7 +3217,7 @@
   },
   {
     "name": "DumpsterCompostItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3225,7 +3225,7 @@
   },
   {
     "name": "DumpsterGarbageItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3233,7 +3233,7 @@
   },
   {
     "name": "DumpsterRecycleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3241,7 +3241,7 @@
   },
   {
     "name": "DwarfWillowSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3249,7 +3249,7 @@
   },
   {
     "name": "EaselItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3257,7 +3257,7 @@
   },
   {
     "name": "EckoStatueItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3265,7 +3265,7 @@
   },
   {
     "name": "EckoTheDolphinItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3273,7 +3273,7 @@
   },
   {
     "name": "EcoylentItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3361,7 +3361,7 @@
   },
   {
     "name": "ElkCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 0,
@@ -3377,7 +3377,7 @@
   },
   {
     "name": "ElkSkypiercerItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3441,7 +3441,7 @@
   },
   {
     "name": "ExecutiveOfficeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3497,7 +3497,7 @@
   },
   {
     "name": "Fabric",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 5,
@@ -3569,7 +3569,7 @@
   },
   {
     "name": "Fat",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 0,
@@ -3593,7 +3593,7 @@
   },
   {
     "name": "Fertilizer",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 15,
@@ -3601,7 +3601,7 @@
   },
   {
     "name": "FertilizerFiller",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 2,
@@ -3633,7 +3633,7 @@
   },
   {
     "name": "FiddleheadsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 10,
@@ -3649,7 +3649,7 @@
   },
   {
     "name": "FilmyFernSporeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3665,7 +3665,7 @@
   },
   {
     "name": "FireweedShootsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": 60,
@@ -3673,7 +3673,7 @@
   },
   {
     "name": "FirLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -3681,7 +3681,7 @@
   },
   {
     "name": "FirSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -3689,7 +3689,7 @@
   },
   {
     "name": "Fish",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -3753,7 +3753,7 @@
   },
   {
     "name": "Food",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 8,
@@ -3761,7 +3761,7 @@
   },
   {
     "name": "FoxCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 4,
@@ -3833,7 +3833,7 @@
   },
   {
     "name": "FriedVegetable",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 5,
@@ -3841,7 +3841,7 @@
   },
   {
     "name": "FriedVegetablesItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 5,
@@ -3857,7 +3857,7 @@
   },
   {
     "name": "Fruit",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 14,
@@ -3889,7 +3889,7 @@
   },
   {
     "name": "Fuel",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 7,
@@ -3897,7 +3897,7 @@
   },
   {
     "name": "Fungus",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 0,
@@ -3977,7 +3977,7 @@
   },
   {
     "name": "GiantCactusFruitItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 11,
@@ -4025,7 +4025,7 @@
   },
   {
     "name": "GneissItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 9,
@@ -4065,7 +4065,7 @@
   },
   {
     "name": "GoldOreItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 5,
@@ -4081,7 +4081,7 @@
   },
   {
     "name": "GovernmentOfficeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -4089,7 +4089,7 @@
   },
   {
     "name": "Grain",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 1,
@@ -4097,7 +4097,7 @@
   },
   {
     "name": "GraniteItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 10,
@@ -4105,7 +4105,7 @@
   },
   {
     "name": "GrassSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4113,7 +4113,7 @@
   },
   {
     "name": "Greens",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 9,
@@ -4169,7 +4169,7 @@
   },
   {
     "name": "Hardwood",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 9,
@@ -4177,7 +4177,7 @@
   },
   {
     "name": "HardyBeardItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4185,7 +4185,7 @@
   },
   {
     "name": "HareCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 3,
@@ -4193,7 +4193,7 @@
   },
   {
     "name": "HeartOfPalmItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 13,
@@ -4217,7 +4217,7 @@
   },
   {
     "name": "HeliconiaSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4273,7 +4273,7 @@
   },
   {
     "name": "HewnLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 12,
@@ -4313,7 +4313,7 @@
   },
   {
     "name": "Housing",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4321,7 +4321,7 @@
   },
   {
     "name": "HuckleberriesItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 0,
@@ -4409,7 +4409,7 @@
   },
   {
     "name": "InjectionMoldMachineItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4481,7 +4481,7 @@
   },
   {
     "name": "IronOreItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 7,
@@ -4553,7 +4553,7 @@
   },
   {
     "name": "JaguarCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 6,
@@ -4569,7 +4569,7 @@
   },
   {
     "name": "JointfirSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4577,7 +4577,7 @@
   },
   {
     "name": "JoshuaLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -4585,7 +4585,7 @@
   },
   {
     "name": "JoshuaSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4609,7 +4609,7 @@
   },
   {
     "name": "KelpItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 13,
@@ -4617,7 +4617,7 @@
   },
   {
     "name": "KelpSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": 17,
@@ -4641,7 +4641,7 @@
   },
   {
     "name": "KingFernSporeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -4665,7 +4665,7 @@
   },
   {
     "name": "LandClaimStakeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 5,
@@ -4689,7 +4689,7 @@
   },
   {
     "name": "LargeFish",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 1,
@@ -5153,7 +5153,7 @@
   },
   {
     "name": "LatticeMushroomSporesItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5201,7 +5201,7 @@
   },
   {
     "name": "LimestoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 6,
@@ -5265,7 +5265,7 @@
   },
   {
     "name": "LogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5329,7 +5329,7 @@
   },
   {
     "name": "LumberItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 9,
@@ -5353,7 +5353,7 @@
   },
   {
     "name": "LupineSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5377,7 +5377,7 @@
   },
   {
     "name": "MailboxItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5465,7 +5465,7 @@
   },
   {
     "name": "MediumCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -5473,7 +5473,7 @@
   },
   {
     "name": "MediumFish",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 1,
@@ -5481,7 +5481,7 @@
   },
   {
     "name": "MediumLeatherCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -5489,7 +5489,7 @@
   },
   {
     "name": "MediumWoolyCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -5497,7 +5497,7 @@
   },
   {
     "name": "Metal",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5529,7 +5529,7 @@
   },
   {
     "name": "MilkItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5601,7 +5601,7 @@
   },
   {
     "name": "Modern Research",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 14,
@@ -5721,7 +5721,7 @@
   },
   {
     "name": "MoonJellyfishItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 2,
@@ -5729,7 +5729,7 @@
   },
   {
     "name": "MortaredBasaltItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5737,7 +5737,7 @@
   },
   {
     "name": "MortaredGneissItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5745,7 +5745,7 @@
   },
   {
     "name": "MortaredGraniteBenchItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5753,7 +5753,7 @@
   },
   {
     "name": "MortaredGraniteChairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5761,7 +5761,7 @@
   },
   {
     "name": "MortaredGraniteDoorItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5769,7 +5769,7 @@
   },
   {
     "name": "MortaredGraniteFireplaceItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5777,7 +5777,7 @@
   },
   {
     "name": "MortaredGraniteItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5785,7 +5785,7 @@
   },
   {
     "name": "MortaredGraniteTableItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5793,7 +5793,7 @@
   },
   {
     "name": "MortaredLimestoneBenchItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5801,7 +5801,7 @@
   },
   {
     "name": "MortaredLimestoneChairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5809,7 +5809,7 @@
   },
   {
     "name": "MortaredLimestoneDoorItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5817,7 +5817,7 @@
   },
   {
     "name": "MortaredLimestoneFireplaceItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5825,7 +5825,7 @@
   },
   {
     "name": "MortaredLimestoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5833,7 +5833,7 @@
   },
   {
     "name": "MortaredLimestoneTableItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5841,7 +5841,7 @@
   },
   {
     "name": "MortaredSandstoneBenchItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5849,7 +5849,7 @@
   },
   {
     "name": "MortaredSandstoneChairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5857,7 +5857,7 @@
   },
   {
     "name": "MortaredSandstoneDoorItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5865,7 +5865,7 @@
   },
   {
     "name": "MortaredSandstoneFireplaceItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5873,7 +5873,7 @@
   },
   {
     "name": "MortaredSandstoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5881,7 +5881,7 @@
   },
   {
     "name": "MortaredSandstoneTableItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5889,7 +5889,7 @@
   },
   {
     "name": "MortaredShaleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5897,7 +5897,7 @@
   },
   {
     "name": "MortaredStone",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 9,
@@ -5961,7 +5961,7 @@
   },
   {
     "name": "MountainGoatCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 1,
@@ -5977,7 +5977,7 @@
   },
   {
     "name": "NaturalFiber",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 15,
@@ -5985,7 +5985,7 @@
   },
   {
     "name": "NormalHairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -5993,7 +5993,7 @@
   },
   {
     "name": "NuclearFuelItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6009,7 +6009,7 @@
   },
   {
     "name": "NylonChipsItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6065,7 +6065,7 @@
   },
   {
     "name": "OakLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -6073,7 +6073,7 @@
   },
   {
     "name": "OceanSpraySeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6081,7 +6081,7 @@
   },
   {
     "name": "OfficeMailboxItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6121,7 +6121,7 @@
   },
   {
     "name": "OrchidSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6129,7 +6129,7 @@
   },
   {
     "name": "Ore",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 0,
@@ -6137,7 +6137,7 @@
   },
   {
     "name": "OtterCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 14,
@@ -6145,7 +6145,7 @@
   },
   {
     "name": "PacificSardineItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -6161,7 +6161,7 @@
   },
   {
     "name": "PalmLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -6169,7 +6169,7 @@
   },
   {
     "name": "PalmSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6177,7 +6177,7 @@
   },
   {
     "name": "PapayaItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 0,
@@ -6201,7 +6201,7 @@
   },
   {
     "name": "PaperMachineItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6225,7 +6225,7 @@
   },
   {
     "name": "PeasantHairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6265,7 +6265,7 @@
   },
   {
     "name": "PickaxeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6281,7 +6281,7 @@
   },
   {
     "name": "PineappleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 9,
@@ -6329,7 +6329,7 @@
   },
   {
     "name": "PlantFibersItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 12,
@@ -6377,7 +6377,7 @@
   },
   {
     "name": "Power",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6401,7 +6401,7 @@
   },
   {
     "name": "PrairieDogCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 3,
@@ -6417,7 +6417,7 @@
   },
   {
     "name": "PricklyPearFruitItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 11,
@@ -6441,7 +6441,7 @@
   },
   {
     "name": "PrintingPressItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6465,7 +6465,7 @@
   },
   {
     "name": "PumpkinItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 9,
@@ -6521,7 +6521,7 @@
   },
   {
     "name": "RawFishItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 8,
@@ -6529,7 +6529,7 @@
   },
   {
     "name": "RawFood",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 14,
@@ -6593,7 +6593,7 @@
   },
   {
     "name": "RedwoodLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -6601,7 +6601,7 @@
   },
   {
     "name": "RedwoodSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6633,7 +6633,7 @@
   },
   {
     "name": "Research",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6657,7 +6657,7 @@
   },
   {
     "name": "RiceItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 4,
@@ -6697,7 +6697,7 @@
   },
   {
     "name": "Rock",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -6777,7 +6777,7 @@
   },
   {
     "name": "SaguaroRibItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -6785,7 +6785,7 @@
   },
   {
     "name": "SaguaroSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6793,7 +6793,7 @@
   },
   {
     "name": "Salad",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 4,
@@ -6801,7 +6801,7 @@
   },
   {
     "name": "SalmonItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6825,7 +6825,7 @@
   },
   {
     "name": "SandstoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 8,
@@ -6841,7 +6841,7 @@
   },
   {
     "name": "SaxifrageSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6881,7 +6881,7 @@
   },
   {
     "name": "ScruffyHairItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6889,7 +6889,7 @@
   },
   {
     "name": "SeagrassSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -6913,7 +6913,7 @@
   },
   {
     "name": "Seeds",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 9,
@@ -6945,7 +6945,7 @@
   },
   {
     "name": "ShaleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 1,
@@ -6985,7 +6985,7 @@
   },
   {
     "name": "ShippingContainerBlueItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 3,
@@ -6993,7 +6993,7 @@
   },
   {
     "name": "ShippingContainerGreenItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 4,
@@ -7001,7 +7001,7 @@
   },
   {
     "name": "ShippingContainerRedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 5,
@@ -7017,7 +7017,7 @@
   },
   {
     "name": "ShortBeardItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -7033,7 +7033,7 @@
   },
   {
     "name": "ShovelItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -7041,7 +7041,7 @@
   },
   {
     "name": "Silica",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 10,
@@ -7081,7 +7081,7 @@
   },
   {
     "name": "Skill Scrolls",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 14,
@@ -7105,7 +7105,7 @@
   },
   {
     "name": "SmallCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -7113,7 +7113,7 @@
   },
   {
     "name": "SmallFish",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 3,
@@ -7545,7 +7545,7 @@
   },
   {
     "name": "SmallStockpileItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -7553,7 +7553,7 @@
   },
   {
     "name": "SmallTableItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -7625,7 +7625,7 @@
   },
   {
     "name": "SnappingTurtleCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 1,
@@ -7633,7 +7633,7 @@
   },
   {
     "name": "Softwood",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 11,
@@ -7673,7 +7673,7 @@
   },
   {
     "name": "SpruceLogItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -7681,7 +7681,7 @@
   },
   {
     "name": "SpruceSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -7777,7 +7777,7 @@
   },
   {
     "name": "SteelAbstractFixtureItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 14,
@@ -7849,7 +7849,7 @@
   },
   {
     "name": "SteelHangingFixtureItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 15,
@@ -7857,7 +7857,7 @@
   },
   {
     "name": "SteelHangingLampItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 14,
@@ -7873,7 +7873,7 @@
   },
   {
     "name": "SteelKitchenLampItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 12,
@@ -7929,7 +7929,7 @@
   },
   {
     "name": "SteelSearchlightItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 2,
@@ -7953,7 +7953,7 @@
   },
   {
     "name": "SteelSquareFixtureItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_05.png",
     "xPos": 13,
@@ -7969,7 +7969,7 @@
   },
   {
     "name": "StockpileItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 12,
@@ -7977,7 +7977,7 @@
   },
   {
     "name": "StoneAxeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 12,
@@ -7993,7 +7993,7 @@
   },
   {
     "name": "StoneDoorItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_03.png",
     "xPos": 10,
@@ -8001,7 +8001,7 @@
   },
   {
     "name": "StoneHammerItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 11,
@@ -8009,7 +8009,7 @@
   },
   {
     "name": "StoneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 0,
@@ -8017,7 +8017,7 @@
   },
   {
     "name": "StoneMacheteItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 2,
@@ -8025,7 +8025,7 @@
   },
   {
     "name": "StonePickaxeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 14,
@@ -8057,7 +8057,7 @@
   },
   {
     "name": "StoneSickleItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 10,
@@ -8065,7 +8065,7 @@
   },
   {
     "name": "StoneWellItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8081,7 +8081,7 @@
   },
   {
     "name": "StorageChestItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 0,
@@ -8097,7 +8097,7 @@
   },
   {
     "name": "StoreItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 2,
@@ -8113,7 +8113,7 @@
   },
   {
     "name": "StrangeFuelItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8201,7 +8201,7 @@
   },
   {
     "name": "SugarcaneItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8225,7 +8225,7 @@
   },
   {
     "name": "SunflowerItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 6,
@@ -8265,7 +8265,7 @@
   },
   {
     "name": "TableItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8385,7 +8385,7 @@
   },
   {
     "name": "TaroRootItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 8,
@@ -8409,7 +8409,7 @@
   },
   {
     "name": "TinyCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -8417,7 +8417,7 @@
   },
   {
     "name": "TinyFurCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -8425,7 +8425,7 @@
   },
   {
     "name": "TinyLeatherCarcass",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -8433,7 +8433,7 @@
   },
   {
     "name": "TinyStockpileItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8449,7 +8449,7 @@
   },
   {
     "name": "TomatoItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 5,
@@ -8465,7 +8465,7 @@
   },
   {
     "name": "Tool",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8489,7 +8489,7 @@
   },
   {
     "name": "TorchItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 8,
@@ -8497,7 +8497,7 @@
   },
   {
     "name": "TorchStandItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 12,
@@ -8545,7 +8545,7 @@
   },
   {
     "name": "TreeDebrisItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8553,7 +8553,7 @@
   },
   {
     "name": "TrilliumSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8569,7 +8569,7 @@
   },
   {
     "name": "TroutItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8585,7 +8585,7 @@
   },
   {
     "name": "TunaItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 11,
@@ -8593,7 +8593,7 @@
   },
   {
     "name": "TurkeyCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 3,
@@ -8601,7 +8601,7 @@
   },
   {
     "name": "Upgrade",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8625,7 +8625,7 @@
   },
   {
     "name": "UrchinItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_01.png",
     "xPos": 9,
@@ -8641,7 +8641,7 @@
   },
   {
     "name": "Vegetable",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 6,
@@ -8673,7 +8673,7 @@
   },
   {
     "name": "Vehicles",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8721,7 +8721,7 @@
   },
   {
     "name": "WaterweedSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8745,7 +8745,7 @@
   },
   {
     "name": "WheatItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 10,
@@ -8769,7 +8769,7 @@
   },
   {
     "name": "WhiteBursageSeedItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8817,7 +8817,7 @@
   },
   {
     "name": "WolfCarcassItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_00.png",
     "xPos": 2,
@@ -8825,7 +8825,7 @@
   },
   {
     "name": "Wood",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": 8,
@@ -8849,7 +8849,7 @@
   },
   {
     "name": "WoodenBowItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "",
     "xPos": -1,
@@ -8865,7 +8865,7 @@
   },
   {
     "name": "WoodenElevatorCallPostItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_04.png",
     "xPos": 4,
@@ -8897,7 +8897,7 @@
   },
   {
     "name": "WoodenHoeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 8,
@@ -8921,7 +8921,7 @@
   },
   {
     "name": "WoodenShovelItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 7,
@@ -8953,7 +8953,7 @@
   },
   {
     "name": "WoodPulpItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": 38,
@@ -9049,7 +9049,7 @@
   },
   {
     "name": "ZoningOfficeItem",
-    "price": 0,
+    "price": 1.0,
     "type": "raw",
     "imageFile": "UI_Icons_02.png",
     "xPos": 2,

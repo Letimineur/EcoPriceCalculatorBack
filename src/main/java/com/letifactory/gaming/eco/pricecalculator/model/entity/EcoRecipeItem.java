@@ -21,8 +21,8 @@ public class EcoRecipeItem {
     @ManyToOne(optional = false)
     @JoinColumn(name = "item", nullable = false)
     private EcoItem ecoItem;
-    @Column(columnDefinition = "decimal(5,0)",nullable = false)
-    private Integer quantity;
+    @Column(columnDefinition = "decimal(5,2)",nullable = false)
+    private double quantity;
     @NotNull
     private boolean reducible;
     @NotNull

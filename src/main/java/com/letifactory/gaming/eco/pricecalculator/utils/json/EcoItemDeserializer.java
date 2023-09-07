@@ -10,6 +10,7 @@ import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoSkill;
 
 import java.io.IOException;
 
+@Deprecated
 public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
 
     public EcoItemDeserializer(){

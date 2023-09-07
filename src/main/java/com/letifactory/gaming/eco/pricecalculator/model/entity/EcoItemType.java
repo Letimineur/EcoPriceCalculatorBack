@@ -21,17 +21,20 @@ public class EcoItemType {
     private double taxe;
     @Column(columnDefinition = "DECIMAL(5,2)", nullable = false)
     private double defaultProfits;
-    @Column(columnDefinition = "DECIMAL(3,0)", nullable = false)
-    private int order;
+    @Column(columnDefinition = "DECIMAL(3,0)", nullable = false, unique = true)
+    private int typeOrder;
 
-    public EcoItemType(String type) {
+    public EcoItemType(final String type) {
         this.type = type;
         this.taxe = 0.0;
-        this.order = -1;
+        this.typeOrder = -1;
     }
 
-    public double getTaxeMultiplicator(){
-        return 1+(getTaxe()/100.0);
+    public double getTaxeMultiplicator() {
+        return 1 + (getTaxe() / 100.0);
     }
-    public double getProfitsMultiplicator() {return 1+(getDefaultProfits()/100.0);}
+
+    public double getProfitsMultiplicator() {
+        return 1 + (getDefaultProfits() / 100.0);
+    }
 }

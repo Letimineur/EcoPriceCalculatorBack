@@ -22,7 +22,7 @@ public class CompleteRecipe {
     private List<EcoRecipeItem> recipeItems;
 
     public List<EcoRecipeItem> getAllOutput() {
-        List<EcoRecipeItem> output = new ArrayList<>();
+        final List<EcoRecipeItem> output = new ArrayList<>();
         this.recipeItems.forEach(ri -> {
             if (ri.isOutput()) {
                 output.add(ri);
@@ -32,7 +32,7 @@ public class CompleteRecipe {
     }
 
     public List<EcoRecipeItem> getAllInput() {
-        List<EcoRecipeItem> input = new ArrayList<>();
+        final List<EcoRecipeItem> input = new ArrayList<>();
         this.recipeItems.forEach(ri -> {
             if (!ri.isOutput()) {
                 input.add(ri);
@@ -42,22 +42,29 @@ public class CompleteRecipe {
     }
 
     public double getSumOfInputPrice() {
-        return this.getAllInput().stream().reduce(0.0, (calc, input) -> Double.sum(calc,
-                        input.getEcoItem().getPrice()),
-                Double::sum);
+        double sum = 0.0;
+        for (final EcoRecipeItem input : this.getAllInput()) {
+            if (input.getEcoItem().getPrice() == 0) {
+                return 0.0;
+            } else {
+                sum += input.getEcoItem().getPrice();
+            }
+        }
+        return sum;
     }
+
     public double getSumOfPricedOutput() {
         return this.getOutputAlreadyPriced().stream().reduce(0.0, (calc, output) -> Double.sum(calc,
                         output.getEcoItem().getPrice()),
                 Double::sum);
     }
 
-    public int getNumberOfOutput() {
-        return this.getAllOutput().stream().reduce(0, (calc, outPut) -> calc + outPut.getQuantity(), Integer::sum);
+    public double getNumberOfOutput() {
+        return this.getAllOutput().stream().reduce(0.0, (calc, outPut) -> calc + outPut.getQuantity(), Double::sum);
     }
 
     public List<EcoRecipeItem> getOutputAlreadyPriced() {
-        List<EcoRecipeItem> pricedOutput = new ArrayList<>();
+        final List<EcoRecipeItem> pricedOutput = new ArrayList<>();
         this.getAllOutput().forEach(outputs -> {
             final EcoItem ecoItem = outputs.getEcoItem();
             if (ecoItem.getPrice() > 0) {
@@ -68,7 +75,7 @@ public class CompleteRecipe {
     }
 
     public List<EcoRecipeItem> geNotPricedOutput() {
-        List<EcoRecipeItem> notPricedOutput = new ArrayList<>();
+        final List<EcoRecipeItem> notPricedOutput = new ArrayList<>();
         this.getAllOutput().forEach(outputs -> {
             final EcoItem ecoItem = outputs.getEcoItem();
             if (ecoItem.getPrice() == 0) {
@@ -78,4 +85,4 @@ public class CompleteRecipe {
         return notPricedOutput;
     }
 
-    }
+}

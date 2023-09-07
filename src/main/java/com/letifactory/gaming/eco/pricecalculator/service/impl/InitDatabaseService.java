@@ -47,6 +47,8 @@ public class InitDatabaseService {
     @Autowired
     private WorkbenchRepository workbenchRepository;
 
+    @Autowired
+    private CalcItemPriceFromRecipeService calcItemPriceFromRecipeService;
 
 
     public void initDatabase() throws FailedDatabaseInitException {
@@ -57,6 +59,8 @@ public class InitDatabaseService {
         this.initEcoItemType();
         this.initEcoItem();
         this.initRecipes();
+
+        calcItemPriceFromRecipeService.updateItemPriceForItemType(new EcoItemType("basic", 5.0, 10.0, 1));
 
     }
 
@@ -75,7 +79,7 @@ public class InitDatabaseService {
                     logg.info(ADDED_LOG);
                 });
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoConfig));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoConfig), e);
             }
         }
@@ -97,7 +101,7 @@ public class InitDatabaseService {
                         }
                 );
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoSkill));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoSkill), e);
             }
         }
@@ -118,7 +122,7 @@ public class InitDatabaseService {
                     logg.info(ADDED_LOG);
                 });
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoWorkbench));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoWorkbench), e);
             }
         }
@@ -139,7 +143,7 @@ public class InitDatabaseService {
                     logg.info(ADDED_LOG);
                 });
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoItemType));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoItemType), e);
             }
         }
@@ -162,18 +166,18 @@ public class InitDatabaseService {
                     logg.info(ADDED_LOG);
                 });
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoItem));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoItem), e);
             }
         }
     }
 
     private void initRecipes() {
-        List<EcoRecipe> recipes = recipeRepository.findAll();
+        final List<EcoRecipe> recipes = recipeRepository.findAll();
         if (recipes.isEmpty()) {
             final String ecoRecipes = "EcoRecipes";
             try {
-                List<CompleteRecipe> cptRecipes = new ObjectMapper().readValue(
+                final List<CompleteRecipe> cptRecipes = new ObjectMapper().readValue(
                         new File(AppConstantUtils.getJsonFilePath(ecoRecipes)),
                         new TypeReference<>() {
                         });
@@ -187,7 +191,7 @@ public class InitDatabaseService {
                     logg.info(ADDED_LOG);
                 });
                 logg.info(String.format(SUCCESS_ADD_LOG, ecoRecipes));
-            } catch (IOException e) {
+            } catch (final IOException e) {
                 throw new FailedDatabaseInitException(String.format(FAILED_ADD_LOG, ecoRecipes), e);
             }
         }
