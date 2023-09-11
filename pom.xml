@@ -9,15 +9,20 @@
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>letifactory.gaming</groupId>
+	<groupId>com.letifactory.gaming</groupId>
 	<artifactId>EcoPriceCalculator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>EcoPriceCalculator</name>
 	<description>Price calculator for ECO</description>
 	<properties>
 		<java.version>17</java.version>
+		<log4j.version>2.20.0</log4j.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -74,7 +79,19 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.20.0</version>
+			<version>${log4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>${log4j.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-jul</artifactId>
+			<version>${log4j.version}</version>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 

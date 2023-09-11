@@ -4969,7 +4969,7 @@
   },
   {
     "name": "RawMeatItem",
-    "type": "modern",
+    "type": "basic",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "8",

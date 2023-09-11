@@ -37,4 +37,9 @@ public class EcoItemType {
     public double getProfitsMultiplicator() {
         return 1 + (getDefaultProfits() / 100.0);
     }
+
+    @Override
+    public String toString() {
+        return this.getType() + " order: " + getTypeOrder();
+    }
 }

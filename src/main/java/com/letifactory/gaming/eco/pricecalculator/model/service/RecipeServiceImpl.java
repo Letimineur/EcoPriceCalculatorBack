@@ -55,4 +55,7 @@ public class RecipeServiceImpl {
         return craftingRecipe;
     }
 
+    public List<EcoRecipe> findAll() {
+        return recipeRepository.findAll();
+    }
 }

@@ -40,7 +40,7 @@ public class EcoItem {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("ItemName: ").append(getName())
-                .append(" type: ").append(getType().getType())
+                .append(" type: ").append(getType().getType()).append(" ").append(getType().getTypeOrder())
                 .append(" price: ").append(getPrice());
         return builder.toString();
     }

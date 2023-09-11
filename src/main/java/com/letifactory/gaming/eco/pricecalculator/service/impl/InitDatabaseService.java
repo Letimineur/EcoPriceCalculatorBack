@@ -60,7 +60,8 @@ public class InitDatabaseService {
         this.initEcoItem();
         this.initRecipes();
 
-        calcItemPriceFromRecipeService.updateItemPriceForItemType(new EcoItemType("basic", 5.0, 10.0, 1));
+        calcItemPriceFromRecipeService.showRecipeConflict();
+        //calcItemPriceFromRecipeService.setAllPrice();
 
     }
 
@@ -149,6 +150,9 @@ public class InitDatabaseService {
         }
         //Init allType constant for later use
         AppConstantUtils.addAllTypeToConstant(itemTypes);
+        if(AppConstantUtils.ALL_TYPES.get(0)  == null){
+            throw new FailedDatabaseInitException("There is no type with order = 0");
+        }
     }
 
     private void initEcoItem() {
