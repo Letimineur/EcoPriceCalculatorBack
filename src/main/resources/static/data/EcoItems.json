@@ -569,7 +569,7 @@
   },
   {
     "name": "BakedVegetable",
-    "type": "domestic",
+    "type": "special",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "6",
@@ -1721,7 +1721,7 @@
   },
   {
     "name": "CompositeBowItem",
-    "type": "advanced",
+    "type": "modern",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "0",
@@ -2417,7 +2417,7 @@
   },
   {
     "name": "CouchItem",
-    "type": "basic",
+    "type": "domestic",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "10",
@@ -3201,7 +3201,7 @@
   },
   {
     "name": "FriedVegetable",
-    "type": "domestic",
+    "type": "special",
     "price": "0",
     "imageFile": "UI_Icons_Tags.png",
     "xPos": "5",
@@ -3209,7 +3209,7 @@
   },
   {
     "name": "FriedVegetablesItem",
-    "type": "domestic",
+    "type": "special",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "5",
@@ -5185,7 +5185,7 @@
   },
   {
     "name": "PlantFibersItem",
-    "type": "modern",
+    "type": "raw",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "12",
@@ -6153,7 +6153,7 @@
   },
   {
     "name": "ServoItem",
-    "type": "advanced",
+    "type": "modern",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "15",
@@ -6193,7 +6193,7 @@
   },
   {
     "name": "ShornWoolItem",
-    "type": "food",
+    "type": "basic",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "4",
@@ -6241,7 +6241,7 @@
   },
   {
     "name": "SlagItem",
-    "type": "advanced",
+    "type": "basic",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "4",
@@ -6393,7 +6393,7 @@
   },
   {
     "name": "SteelAxleItem",
-    "type": "advanced",
+    "type": "modern",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "11",
@@ -6401,7 +6401,7 @@
   },
   {
     "name": "SteelBarItem",
-    "type": "modern",
+    "type": "advanced",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "1",
@@ -6433,7 +6433,7 @@
   },
   {
     "name": "SteelGearItem",
-    "type": "advanced",
+    "type": "modern",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "6",
@@ -7177,7 +7177,7 @@
   },
   {
     "name": "WoodBoard",
-    "type": "modern",
+    "type": "basic",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "10",

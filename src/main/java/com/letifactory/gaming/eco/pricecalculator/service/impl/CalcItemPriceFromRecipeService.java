@@ -36,24 +36,24 @@ public class CalcItemPriceFromRecipeService {
     public void setAllPrice() {
         if (!isRunning) {
             isRunning = true;
-            for (Map.Entry<Integer, String> type : AppConstantUtils.ALL_TYPES.entrySet()) {
+            for (final Map.Entry<Integer, String> type : AppConstantUtils.ALL_TYPES.entrySet()) {
                 if (type.getKey() > 0) {
                     try {
                         final EcoItemType itemType = ecoItemTypeService.findById(type.getValue());
                         logg.info("Starting pricing for " + itemType);
                         setPriceForItemType(itemType);
-                    } catch (NoSuchElementException e) {
+                    } catch (final NoSuchElementException e) {
                         logg.warn("No type found for " + type.getValue() + " can not continue calcul.", e);
                         isRunning = false;
                         itemToUpdate.clear();
                         return;
-                    } catch (WrongValueInDataBaseException e) {
+                    } catch (final WrongValueInDataBaseException e) {
                         logg.warn(e.getMessage());
                         isRunning = false;
                         itemToUpdate.clear();
                         return;
                     }
-                    for (Map.Entry<EcoItem, EcoItem> entry : unCalculable.entrySet()) {
+                    for (final Map.Entry<EcoItem, EcoItem> entry : unCalculable.entrySet()) {
                         System.out.println("UnCalculable " + entry.getKey() + " dur to " + entry.getValue());
                     }
                     logg.info("Starting delayed pricing for " + type.getValue());
@@ -67,15 +67,15 @@ public class CalcItemPriceFromRecipeService {
 
     private void delayedItemPriceCalc() {
         while (!itemToUpdate.isEmpty()) {
-            List<EcoItem> inCalc = new ArrayList<>(itemToUpdate);
+            final List<EcoItem> inCalc = new ArrayList<>(itemToUpdate);
             itemToUpdate.clear();
-            for (EcoItem item : inCalc) {
+            for (final EcoItem item : inCalc) {
                 setItemPrice(item);
             }
         }
     }
 
-    private void setPriceForItemType(EcoItemType type) throws WrongValueInDataBaseException {
+    private void setPriceForItemType(final EcoItemType type) throws WrongValueInDataBaseException {
         final List<EcoItem> itemsToUpdate = ecoItemService.getAllNotPricedItemForType(type);
         itemsToUpdate.forEach(item -> {
             setItemPrice(item);
@@ -89,12 +89,25 @@ public class CalcItemPriceFromRecipeService {
             logg.warn("calcItemPriceFromAllRecipe: " + msg);
             throw new NoSuchElementException(msg);
         }
-        final List<Double> allPrice = new ArrayList<>();
-        completeRecipeList.forEach(completeRecipe ->
-                allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
-        final double result = allPrice.stream().reduce(0.0, Double::sum) / allPrice.size();
+        double result = 0.0;
+        //special case of BarrelItem that only need base recipe to be calculated
+        if (item.getName().equals("BarrelItem")) {
+            logg.info("Special calc for Barrel item price");
+            for (final CompleteRecipe cptRecipe : completeRecipeList) {
+                if (cptRecipe.getRecipe().getName().equals("Barrel")) {
+                    result = calcPriceForItemFromRecipe(cptRecipe, item);
+                    logg.info("Barrel will be priced at " + result);
+                    break;
+                }
+            }
+        } else {
+            final List<Double> allPrice = new ArrayList<>();
+            completeRecipeList.forEach(completeRecipe ->
+                    allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
+            result = allPrice.stream().filter(d -> d > 0).mapToDouble(d -> d).min().orElse(0.0);
+        }
 
-        double orgPrice = item.getPrice();
+        final double orgPrice = item.getPrice();
         item.setPrice(0.0);
         item.setPrice(result);
         if (item.getPrice() == 0) {
@@ -110,7 +123,7 @@ public class CalcItemPriceFromRecipeService {
         return item;
     }
 
-    private double calcPriceForItemFromRecipe(CompleteRecipe completeRecipe, EcoItem itemToCalc)
+    private double calcPriceForItemFromRecipe(final CompleteRecipe completeRecipe, final EcoItem itemToCalc)
             throws WrongValueInDataBaseException {
         if (testForUnpricedInput(completeRecipe, itemToCalc)) {
             return 0.0;
@@ -123,7 +136,7 @@ public class CalcItemPriceFromRecipeService {
                 Double::sum);
 
         if (isNotFeedBackRecipe(completeRecipe)) {
-            for (EcoRecipeItem output : completeRecipe.getAllOutput()) {
+            for (final EcoRecipeItem output : completeRecipe.getAllOutput()) {
                 if (output.getEcoItem().getName().equals(itemToCalc.getName())) {
                     final double outputBasePrice = (sumOfInputPrice *
                             output.getQuantity() / numberOfOutput) / output.getQuantity();
@@ -134,7 +147,7 @@ public class CalcItemPriceFromRecipeService {
             }
         } else {
             final List<EcoRecipeItem> notPricedOutput = completeRecipe.geNotPricedOutput();
-            for (EcoRecipeItem output : notPricedOutput) {
+            for (final EcoRecipeItem output : notPricedOutput) {
                 if (output.getEcoItem().getName().equals(itemToCalc.getName())) {
                     final double outputBasePrice = ((sumOfInputPrice - completeRecipe.getSumOfPricedOutput()) *
                             output.getQuantity() / numberOfOutput) / output.getQuantity();
@@ -157,13 +170,13 @@ public class CalcItemPriceFromRecipeService {
         final List<EcoItem> notPricedInputItem =
                 allInput.stream().map(EcoRecipeItem::getEcoItem).filter(ecoItem -> ecoItem.getPrice() == 0).toList();
         if (!notPricedInputItem.isEmpty()) {
-            for (EcoItem item : notPricedInputItem) {
+            for (final EcoItem item : notPricedInputItem) {
                 System.out.println(completeRecipe.getRecipe().getName());
                 logg.info("Recipe inputItem must be priced first " + item);
                 if (item.getType().getTypeOrder() == 0) {
                     throw new WrongValueInDataBaseException("A raw itemType doesn't have a price. Impossible to " +
                             "calItemPrice because of " + item);
-                } else if (item.getType().getTypeOrder() > itemToCalc.getType().getTypeOrder()) {
+                } else if (item.getType().getTypeOrder() > itemToCalc.getType().getTypeOrder() && isNotFeedBackRecipe(completeRecipe)) {
                     logg.error("Bad type order of input " + item + ",it should be =< " + itemToCalc);
                     unCalculable.put(itemToCalc, item);
                 } else {
@@ -191,7 +204,7 @@ public class CalcItemPriceFromRecipeService {
         recipeService.findAll().forEach(recipe -> {
             final CompleteRecipe completeRecipe = recipeService.getCompleteRecipe(recipe.getName());
             completeRecipe.getAllOutput().forEach(output -> {
-                List<EcoItem> inputs = new ArrayList<>();
+                final List<EcoItem> inputs = new ArrayList<>();
                 completeRecipe.getAllInput().forEach(input -> {
                     if (input.getEcoItem().getType().getTypeOrder() > output.getEcoItem().getType().getTypeOrder()) {
                         inputs.add(input.getEcoItem());
