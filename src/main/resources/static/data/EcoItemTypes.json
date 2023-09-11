@@ -30,10 +30,22 @@
     "typeOrder": 3
   },
   {
+    "type": "workbench",
+    "taxe":  15.0,
+    "defaultProfits": 10,
+    "typeOrder": 4
+  },
+  {
     "type": "upgrade",
     "taxe":  20.0,
     "defaultProfits": 10,
     "typeOrder": 5
+  },
+  {
+    "type": "domestic",
+    "taxe":  10.0,
+    "defaultProfits": 10,
+    "typeOrder": 6
   },
   {
     "type": "vehicle",
@@ -42,15 +54,9 @@
     "typeOrder": 7
   },
   {
-    "type": "workbench",
-    "taxe":  15.0,
-    "defaultProfits": 10,
-    "typeOrder": 4
-  },
-  {
-    "type": "domestic",
-    "taxe":  10.0,
-    "defaultProfits": 10,
-    "typeOrder": 6
+    "type": "food",
+    "taxe":  5.0,
+    "defaultProfits": 5,
+    "typeOrder": 8
   }
 ]

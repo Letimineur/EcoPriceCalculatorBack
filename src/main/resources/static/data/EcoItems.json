@@ -489,7 +489,7 @@
   },
   {
     "name": "AutumnStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "5",
@@ -505,7 +505,7 @@
   },
   {
     "name": "BakedAgaveItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "5",
@@ -513,7 +513,7 @@
   },
   {
     "name": "BakedBeetItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "10",
@@ -521,7 +521,7 @@
   },
   {
     "name": "BakedCornItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "5",
@@ -529,7 +529,7 @@
   },
   {
     "name": "BakedHeartOfPalmItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "14",
@@ -537,7 +537,7 @@
   },
   {
     "name": "BakedMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "11",
@@ -545,7 +545,7 @@
   },
   {
     "name": "BakedRoastItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "1",
@@ -553,7 +553,7 @@
   },
   {
     "name": "BakedTaroItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "0",
@@ -561,7 +561,7 @@
   },
   {
     "name": "BakedTomatoItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "11",
@@ -881,7 +881,7 @@
   },
   {
     "name": "AgoutiEnchiladasItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "13",
@@ -937,7 +937,7 @@
   },
   {
     "name": "BanhXeoItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "8",
@@ -953,7 +953,7 @@
   },
   {
     "name": "BannockItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "15",
@@ -1009,7 +1009,7 @@
   },
   {
     "name": "BasicSaladItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "4",
@@ -1057,7 +1057,7 @@
   },
   {
     "name": "BearclawItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "9",
@@ -1073,7 +1073,7 @@
   },
   {
     "name": "BearSUPREMEItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "9",
@@ -1081,7 +1081,7 @@
   },
   {
     "name": "BeetCampfireSaladItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "8",
@@ -1121,7 +1121,7 @@
   },
   {
     "name": "BisonChowFunItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "9",
@@ -1185,7 +1185,7 @@
   },
   {
     "name": "BoiledGrainsItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "13",
@@ -1193,7 +1193,7 @@
   },
   {
     "name": "BoiledRiceItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "5",
@@ -1201,7 +1201,7 @@
   },
   {
     "name": "BoiledSausageItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "5",
@@ -1217,7 +1217,7 @@
   },
   {
     "name": "BreadItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "1",
@@ -1337,7 +1337,7 @@
   },
   {
     "name": "CamasBreadItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "12",
@@ -1345,7 +1345,7 @@
   },
   {
     "name": "CamasBulbBakeItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "7",
@@ -1393,7 +1393,7 @@
   },
   {
     "name": "CampfireRoastItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "24",
@@ -1497,7 +1497,7 @@
   },
   {
     "name": "CharredAgaveItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "6",
@@ -1505,7 +1505,7 @@
   },
   {
     "name": "CharredBeansItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "0",
@@ -1513,7 +1513,7 @@
   },
   {
     "name": "CharredBeetItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "14",
@@ -1521,7 +1521,7 @@
   },
   {
     "name": "CharredCactusFruitItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "2",
@@ -1529,7 +1529,7 @@
   },
   {
     "name": "CharredCamasBulbItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "15",
@@ -1537,7 +1537,7 @@
   },
   {
     "name": "CharredCornItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "0",
@@ -1545,7 +1545,7 @@
   },
   {
     "name": "CharredFireweedShootsItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "13",
@@ -1553,7 +1553,7 @@
   },
   {
     "name": "CharredFishItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "1",
@@ -1561,7 +1561,7 @@
   },
   {
     "name": "CharredHeartOfPalmItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "1",
@@ -1569,7 +1569,7 @@
   },
   {
     "name": "CharredMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "2",
@@ -1577,7 +1577,7 @@
   },
   {
     "name": "CharredMushroomsItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "3",
@@ -1585,7 +1585,7 @@
   },
   {
     "name": "CharredPapayaItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "1",
@@ -1593,7 +1593,7 @@
   },
   {
     "name": "CharredPineappleItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "3",
@@ -1601,7 +1601,7 @@
   },
   {
     "name": "CharredSausageItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "4",
@@ -1609,7 +1609,7 @@
   },
   {
     "name": "CharredTaroItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_02.png",
     "xPos": "7",
@@ -1617,7 +1617,7 @@
   },
   {
     "name": "CharredTomatoItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "5",
@@ -1657,7 +1657,7 @@
   },
   {
     "name": "ClamChowderItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "12",
@@ -2361,7 +2361,7 @@
   },
   {
     "name": "CornFrittersItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "6",
@@ -2665,7 +2665,7 @@
   },
   {
     "name": "CrimsonSaladItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "7",
@@ -2673,7 +2673,7 @@
   },
   {
     "name": "CrispyBaconItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "51",
@@ -2905,7 +2905,7 @@
   },
   {
     "name": "FantasticForestPizzaItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "5",
@@ -2969,7 +2969,7 @@
   },
   {
     "name": "ElkTacoItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "8",
@@ -2977,7 +2977,7 @@
   },
   {
     "name": "ElkWellingtonItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "8",
@@ -3025,7 +3025,7 @@
   },
   {
     "name": "FernCampfireSaladItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "5",
@@ -3089,7 +3089,7 @@
   },
   {
     "name": "FishNChipsItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "2",
@@ -3105,7 +3105,7 @@
   },
   {
     "name": "FlatbreadItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "11",
@@ -3153,7 +3153,7 @@
   },
   {
     "name": "FriedCamasItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "4",
@@ -3161,7 +3161,7 @@
   },
   {
     "name": "FriedFiddleheadsItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "15",
@@ -3169,7 +3169,7 @@
   },
   {
     "name": "FriedHareHaunchesItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "15",
@@ -3177,7 +3177,7 @@
   },
   {
     "name": "FriedHeartsOfPalmItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "9",
@@ -3185,7 +3185,7 @@
   },
   {
     "name": "FriedTaroItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "3",
@@ -3193,7 +3193,7 @@
   },
   {
     "name": "FriedTomatoesItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "5",
@@ -3233,7 +3233,7 @@
   },
   {
     "name": "FruitMuffinItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "0",
@@ -3241,7 +3241,7 @@
   },
   {
     "name": "FruitSaladItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "14",
@@ -3249,7 +3249,7 @@
   },
   {
     "name": "FruitTartItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "10",
@@ -3257,7 +3257,7 @@
   },
   {
     "name": "FurPeltItem",
-    "type": "modern",
+    "type": "basic",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "9",
@@ -3457,7 +3457,7 @@
   },
   {
     "name": "FieldCampfireStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "9",
@@ -3545,7 +3545,7 @@
   },
   {
     "name": "HosomakiItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "6",
@@ -3561,7 +3561,7 @@
   },
   {
     "name": "HuckleberryFritterItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "15",
@@ -3569,7 +3569,7 @@
   },
   {
     "name": "HuckleberryPieItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "13",
@@ -3625,7 +3625,7 @@
   },
   {
     "name": "InfusedOilItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "15",
@@ -4233,7 +4233,7 @@
   },
   {
     "name": "JungleCampfireSaladItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "6",
@@ -4241,7 +4241,7 @@
   },
   {
     "name": "JungleCampfireStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "14",
@@ -4249,7 +4249,7 @@
   },
   {
     "name": "HeartyHometownPizzaItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "4",
@@ -4265,7 +4265,7 @@
   },
   {
     "name": "KelpyCrabRollItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "7",
@@ -4321,7 +4321,7 @@
   },
   {
     "name": "LeavenedDoughItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "7",
@@ -4385,7 +4385,7 @@
   },
   {
     "name": "LoadedTaroFriesItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "1",
@@ -4497,7 +4497,7 @@
   },
   {
     "name": "MeatPieItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "14",
@@ -4505,7 +4505,7 @@
   },
   {
     "name": "MeatStockItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "7",
@@ -4513,7 +4513,7 @@
   },
   {
     "name": "MeatyStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "2",
@@ -4561,7 +4561,7 @@
   },
   {
     "name": "MacaroonsItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "9",
@@ -4609,7 +4609,7 @@
   },
   {
     "name": "MillionairesSaladItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "4",
@@ -4657,7 +4657,7 @@
   },
   {
     "name": "MochiItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "6",
@@ -5057,7 +5057,7 @@
   },
   {
     "name": "OilItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "6",
@@ -5129,7 +5129,7 @@
   },
   {
     "name": "PhadThaiItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "11",
@@ -5153,7 +5153,7 @@
   },
   {
     "name": "PirozhokItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "3",
@@ -5209,7 +5209,7 @@
   },
   {
     "name": "PokeBowlItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "1",
@@ -5217,7 +5217,7 @@
   },
   {
     "name": "PortableSteamEngineItem",
-    "type": "domestic",
+    "type": "advanced",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "0",
@@ -5241,7 +5241,7 @@
   },
   {
     "name": "PastryDoughItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "8",
@@ -5249,7 +5249,7 @@
   },
   {
     "name": "PineappleFriendRiceItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "0",
@@ -5273,7 +5273,7 @@
   },
   {
     "name": "PreparedMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "8",
@@ -5289,7 +5289,7 @@
   },
   {
     "name": "PupusasItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "12",
@@ -5321,7 +5321,7 @@
   },
   {
     "name": "RawBaconItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "4",
@@ -5329,7 +5329,7 @@
   },
   {
     "name": "RawMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "8",
@@ -5337,7 +5337,7 @@
   },
   {
     "name": "RawRoastItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "1",
@@ -5345,7 +5345,7 @@
   },
   {
     "name": "RawSausageItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "5",
@@ -5881,7 +5881,7 @@
   },
   {
     "name": "SmoothGutNoodleRollItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "10",
@@ -5897,7 +5897,7 @@
   },
   {
     "name": "PrimeCutItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "8",
@@ -5961,7 +5961,7 @@
   },
   {
     "name": "RootCampfireSaladItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "15",
@@ -5969,7 +5969,7 @@
   },
   {
     "name": "RootCampfireStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "13",
@@ -6017,7 +6017,7 @@
   },
   {
     "name": "RiceNoodlesItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "2",
@@ -6033,7 +6033,7 @@
   },
   {
     "name": "RoastPumpkinItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "6",
@@ -6081,7 +6081,7 @@
   },
   {
     "name": "ScrapMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "40",
@@ -6121,7 +6121,7 @@
   },
   {
     "name": "SearedMeatItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "8",
@@ -6129,7 +6129,7 @@
   },
   {
     "name": "SeededCamasRollItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "8",
@@ -6145,7 +6145,7 @@
   },
   {
     "name": "SensuousSeaPizzaItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "3",
@@ -6169,7 +6169,7 @@
   },
   {
     "name": "SharkFilletSoupItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "11",
@@ -6193,7 +6193,7 @@
   },
   {
     "name": "ShornWoolItem",
-    "type": "modern",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_04.png",
     "xPos": "4",
@@ -6209,7 +6209,7 @@
   },
   {
     "name": "SimmeredMeatItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "1",
@@ -6281,7 +6281,7 @@
   },
   {
     "name": "SpikyRollItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "9",
@@ -6633,7 +6633,7 @@
   },
   {
     "name": "SweetSaladItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "2",
@@ -6745,7 +6745,7 @@
   },
   {
     "name": "TallowItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "7",
@@ -6769,7 +6769,7 @@
   },
   {
     "name": "TaroFriesItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "0",
@@ -6793,7 +6793,7 @@
   },
   {
     "name": "StuffedAlligatorItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "3",
@@ -6801,7 +6801,7 @@
   },
   {
     "name": "StuffedBisonItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "2",
@@ -6809,7 +6809,7 @@
   },
   {
     "name": "StuffedElkItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "1",
@@ -6817,7 +6817,7 @@
   },
   {
     "name": "StuffedGoatItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "15",
@@ -6825,7 +6825,7 @@
   },
   {
     "name": "StuffedJaguarItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "0",
@@ -6833,7 +6833,7 @@
   },
   {
     "name": "StuffedTurkeyItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "10",
@@ -6841,7 +6841,7 @@
   },
   {
     "name": "StuffedWolfItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "14",
@@ -6881,7 +6881,7 @@
   },
   {
     "name": "TastyTropicalPizzaItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "2",
@@ -6929,7 +6929,7 @@
   },
   {
     "name": "ToppedPorridgeItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_03.png",
     "xPos": "4",
@@ -6937,7 +6937,7 @@
   },
   {
     "name": "TortillaItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "9",
@@ -7017,7 +7017,7 @@
   },
   {
     "name": "VegetableMedleyItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_Baked_0.png",
     "xPos": "57",
@@ -7025,7 +7025,7 @@
   },
   {
     "name": "VegetableSoupItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "4",
@@ -7033,7 +7033,7 @@
   },
   {
     "name": "VegetableStockItem",
-    "type": "domestic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_01.png",
     "xPos": "8",
@@ -7113,7 +7113,7 @@
   },
   {
     "name": "WildMixItem",
-    "type": "advanced",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "10",
@@ -7121,7 +7121,7 @@
   },
   {
     "name": "WildStewItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_00.png",
     "xPos": "2",
@@ -7129,7 +7129,7 @@
   },
   {
     "name": "WiltedFiddleheadsItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "6",
@@ -7337,7 +7337,7 @@
   },
   {
     "name": "WorldlyDonutItem",
-    "type": "basic",
+    "type": "food",
     "price": "0",
     "imageFile": "UI_Icons_05.png",
     "xPos": "0",
