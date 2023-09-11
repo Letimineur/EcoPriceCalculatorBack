@@ -1,49 +1,55 @@
 [
   {
+    "type": "special",
+    "taxe":  10.0,
+    "defaultProfits": 10,
+    "typeOrder": -1
+  },
+  {
     "type": "raw",
-    "taxe": "5.0",
+    "taxe":  5.0,
     "defaultProfits": 10,
     "typeOrder": 0
     },
   {
     "type": "basic",
-    "taxe": "5.0",
+    "taxe":  5.0,
     "defaultProfits": 10,
     "typeOrder": 1
   },
   {
     "type": "advanced",
-    "taxe": "10.0",
+    "taxe":  10.0,
     "defaultProfits": 10,
     "typeOrder": 2
   },
   {
     "type": "modern",
-    "taxe": "15.0",
+    "taxe":  15.0,
     "defaultProfits": 10,
     "typeOrder": 3
   },
   {
     "type": "upgrade",
-    "taxe": "20.0",
+    "taxe":  20.0,
     "defaultProfits": 10,
     "typeOrder": 5
   },
   {
     "type": "vehicle",
-    "taxe": "20.0",
+    "taxe":  20.0,
     "defaultProfits": 10,
     "typeOrder": 7
   },
   {
     "type": "workbench",
-    "taxe": "15.0",
+    "taxe":  15.0,
     "defaultProfits": 10,
     "typeOrder": 4
   },
   {
     "type": "domestic",
-    "taxe": "10.0",
+    "taxe":  10.0,
     "defaultProfits": 10,
     "typeOrder": 6
   }
