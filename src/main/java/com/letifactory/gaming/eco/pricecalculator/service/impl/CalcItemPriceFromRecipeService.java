@@ -4,7 +4,6 @@ import com.letifactory.gaming.eco.pricecalculator.exception.WrongValueInDataBase
 import com.letifactory.gaming.eco.pricecalculator.model.dto.CompleteRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItem;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItemType;
-import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipeItem;
 import com.letifactory.gaming.eco.pricecalculator.model.service.EcoItemServiceImpl;
 import com.letifactory.gaming.eco.pricecalculator.model.service.EcoItemTypeServiceImpl;
@@ -40,23 +39,20 @@ public class CalcItemPriceFromRecipeService {
                 if (type.getKey() > 0) {
                     try {
                         final EcoItemType itemType = ecoItemTypeService.findById(type.getValue());
-                        logg.info("Starting pricing for " + itemType);
+                        logg.debug("Starting pricing for " + itemType);
                         setPriceForItemType(itemType);
-                    } catch (final NoSuchElementException e) {
-                        logg.warn("No type found for " + type.getValue() + " can not continue calcul.", e);
-                        isRunning = false;
+                    } catch ( WrongValueInDataBaseException e) {
+                        logg.error("Exiting price Calculation",e);
                         itemToUpdate.clear();
-                        return;
-                    } catch (final WrongValueInDataBaseException e) {
-                        logg.warn(e.getMessage());
+                        unCalculable.clear();
                         isRunning = false;
-                        itemToUpdate.clear();
                         return;
                     }
                     for (final Map.Entry<EcoItem, EcoItem> entry : unCalculable.entrySet()) {
-                        System.out.println("UnCalculable " + entry.getKey() + " dur to " + entry.getValue());
+                        System.out.println("UnCalculable " + entry.getKey() + " due to " + entry.getValue());
                     }
-                    logg.info("Starting delayed pricing for " + type.getValue());
+                    unCalculable.clear();
+                    logg.debug("Starting delayed pricing for " + type.getValue());
                     delayedItemPriceCalc();
                 }
 
@@ -78,32 +74,34 @@ public class CalcItemPriceFromRecipeService {
     private void setPriceForItemType(final EcoItemType type) throws WrongValueInDataBaseException {
         final List<EcoItem> itemsToUpdate = ecoItemService.getAllNotPricedItemForType(type);
         itemsToUpdate.forEach(item -> {
-            setItemPrice(item);
+            try {
+                setItemPrice(item);
+            }catch (NoSuchElementException e){
+                logg.error("Cannot set price for Item",e);
+            }
         });
     }
 
     public EcoItem setItemPrice(final EcoItem item) throws WrongValueInDataBaseException, NoSuchElementException {
         final List<CompleteRecipe> completeRecipeList = recipeService.getAllRecipesCratingItem(item.getName());
         if (completeRecipeList.isEmpty()) {
-            final String msg = "No recipe where found for this item " + item;
-            logg.warn("calcItemPriceFromAllRecipe: " + msg);
-            throw new NoSuchElementException(msg);
+            throw new NoSuchElementException("No recipe where found for this item " + item);
         }
         double result = 0.0;
-        //special case of BarrelItem that only need base recipe to be calculated
+        // special case of BarrelItem that only need base recipe to be calculated
         if (item.getName().equals("BarrelItem")) {
-            logg.info("Special calc for Barrel item price");
+            logg.debug("Special calc for Barrel item price");
             for (final CompleteRecipe cptRecipe : completeRecipeList) {
                 if (cptRecipe.getRecipe().getName().equals("Barrel")) {
                     result = calcPriceForItemFromRecipe(cptRecipe, item);
-                    logg.info("Barrel will be priced at " + result);
+                    logg.debug("Barrel will be priced at " + result);
                     break;
                 }
             }
         } else {
             final List<Double> allPrice = new ArrayList<>();
-            completeRecipeList.forEach(completeRecipe ->
-                    allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
+            completeRecipeList
+                    .forEach(completeRecipe -> allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
             result = allPrice.stream().filter(d -> d > 0).mapToDouble(d -> d).min().orElse(0.0);
         }
 
@@ -111,9 +109,8 @@ public class CalcItemPriceFromRecipeService {
         item.setPrice(0.0);
         item.setPrice(result);
         if (item.getPrice() == 0) {
-            logg.warn(item +
-                    ": Item price cannot be set. Maybe lower type item are not priced yet. Current type is " +
-                    item.getType().getType() + " order:" + item.getType().getTypeOrder());
+            logg.warn(item.getName() +
+                    ": Item price cannot be set because calcul send 0 as result");
         } else {
             logg.info("Price set for item " + item);
             return ecoItemService.save(item);
@@ -132,7 +129,7 @@ public class CalcItemPriceFromRecipeService {
         final double laborPerOutput = (double) completeRecipe.getRecipe().getLabor() / numberOfOutput;
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
         final double sumOfInputPrice = allInput.stream().reduce(0.0, (calc, input) -> Double.sum(calc,
-                        input.getEcoItem().getPrice()),
+                input.getEcoItem().getPrice()),
                 Double::sum);
 
         if (isNotFeedBackRecipe(completeRecipe)) {
@@ -158,7 +155,7 @@ public class CalcItemPriceFromRecipeService {
                 }
             }
         }
-        //Should not go here
+        // Should not go here
         logg.warn("No item found in output. Should not happen. Recipe: " + completeRecipe.getRecipe().getName() +
                 " for " + itemToCalc);
         return 0.0;
@@ -167,8 +164,8 @@ public class CalcItemPriceFromRecipeService {
     private boolean testForUnpricedInput(final CompleteRecipe completeRecipe, final EcoItem itemToCalc)
             throws WrongValueInDataBaseException {
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
-        final List<EcoItem> notPricedInputItem =
-                allInput.stream().map(EcoRecipeItem::getEcoItem).filter(ecoItem -> ecoItem.getPrice() == 0).toList();
+        final List<EcoItem> notPricedInputItem = allInput.stream().map(EcoRecipeItem::getEcoItem)
+                .filter(ecoItem -> ecoItem.getPrice() == 0).toList();
         if (!notPricedInputItem.isEmpty()) {
             for (final EcoItem item : notPricedInputItem) {
                 System.out.println(completeRecipe.getRecipe().getName());
@@ -176,11 +173,12 @@ public class CalcItemPriceFromRecipeService {
                 if (item.getType().getTypeOrder() == 0) {
                     throw new WrongValueInDataBaseException("A raw itemType doesn't have a price. Impossible to " +
                             "calItemPrice because of " + item);
-                } else if (item.getType().getTypeOrder() > itemToCalc.getType().getTypeOrder() && isNotFeedBackRecipe(completeRecipe)) {
-                    logg.error("Bad type order of input " + item + ",it should be =< " + itemToCalc);
+                } else if (item.getType().getTypeOrder() > itemToCalc.getType().getTypeOrder() &&
+                        isNotFeedBackRecipe(completeRecipe)) {
+                    logg.warn("Bad type order of input " + item + ",it should be =< " + itemToCalc);
                     unCalculable.put(itemToCalc, item);
                 } else {
-                    logg.info("Add input to delayed price");
+                    logg.debug("Add input to delayed price "+item);
                     itemToUpdate.add(item);
                 }
             }
@@ -189,12 +187,10 @@ public class CalcItemPriceFromRecipeService {
         return false;
     }
 
-
     private boolean isNotFeedBackRecipe(final CompleteRecipe completeRecipe) {
         final String recipeName = completeRecipe.getRecipe().getName();
         return AppConstantUtils.FEEDBACK_RECIPE.stream().noneMatch(recipe -> recipe.equals(recipeName));
     }
-
 
     private double addTaxeAndCaloriesToPrice(final double itemPrice, final double laborPerOutput, final EcoItem item) {
         return (itemPrice + AppConstantUtils.getLaborPrice(laborPerOutput)) * item.getType().getTaxeMultiplicator();
@@ -212,9 +208,9 @@ public class CalcItemPriceFromRecipeService {
                     }
                 });
                 if (inputs.size() > 0) {
-                    System.out.println("Recipe " + completeRecipe.getRecipe().getName());
-                    System.out.println(output.getEcoItem() + " has higher input :");
-                    inputs.forEach(input -> System.out.println("Input: " + input));
+                    logg.debug("Recipe " + completeRecipe.getRecipe().getName());
+                    logg.debug(output.getEcoItem() + " has higher input :");
+                    inputs.forEach(input -> logg.debug("Input: " + input));
                 }
             });
         });

@@ -1,9 +1,6 @@
 package com.letifactory.gaming.eco.pricecalculator.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoItemDeserializer;
-import com.letifactory.gaming.eco.pricecalculator.utils.json.EcoSkillDeserializer;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -17,7 +14,6 @@ import lombok.Setter;
 @AllArgsConstructor
 
 @Entity
-//@JsonDeserialize(using = EcoItemDeserializer.class)
 public class EcoItem {
     @Id
     @Column(columnDefinition = "nvarchar(50)", nullable = false)
@@ -35,14 +31,14 @@ public class EcoItem {
     @Column(columnDefinition = "DECIMAL(3,0)")
     @JsonProperty(value = "yPos")
     private int yPos;
+    @NotNull
+    private boolean tag;
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("ItemName: ").append(getName())
-                .append(" type: ").append(getType().getType()).append(" ").append(getType().getTypeOrder())
-                .append(" price: ").append(getPrice());
-        return builder.toString();
+        return "ItemName: " + getName() +
+                " type: " + getType().toString() +
+                " price: " + getPrice();
     }
 
 }

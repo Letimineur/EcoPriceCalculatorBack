@@ -13,9 +13,10 @@ import java.io.IOException;
 @Deprecated
 public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
 
-    public EcoItemDeserializer(){
+    public EcoItemDeserializer() {
         this(null);
     }
+
     public EcoItemDeserializer(final Class<?> vc) {
         super(vc);
     }
@@ -29,19 +30,20 @@ public class EcoItemDeserializer extends StdDeserializer<EcoItem> {
         JsonNode imgFileNode = node.get("imageFile");
         JsonNode xPosNode = node.get("xPos");
         JsonNode yPosNode = node.get("yPos");
+        boolean tagNode = node.get("tag").asBoolean();
         int xPos = -1;
         int yPos = -1;
         String imgFile = "";
-        if(xPosNode !=null){
-            xPos=xPosNode.asInt();
+        if (xPosNode != null) {
+            xPos = xPosNode.asInt();
         }
-        if(yPosNode!=null){
-            yPos=yPosNode.asInt();
+        if (yPosNode != null) {
+            yPos = yPosNode.asInt();
         }
-        if(imgFileNode!=null){
+        if (imgFileNode != null) {
             imgFile = imgFileNode.asText();
         }
 
-        return new EcoItem(name,0.0,new EcoItemType(itemType),imgFile,xPos,yPos);
+        return new EcoItem(name, 0.0, new EcoItemType(itemType), imgFile, xPos, yPos, tagNode);
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG">
+<Configuration status="INFO">
     <Properties>
         <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %p %m%n</Property>
         <Property name="APP_LOG_ROOT">c:/DEV/LOGS</Property>
@@ -19,14 +19,14 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="com.letifactory" level="debug" additivity="false">
+        <Logger name="com.letifactory.gaming" level="debug" additivity="false">
             <AppenderRef ref="LogToFile"/>
             <AppenderRef ref="LogToConsole"/>
         </Logger>
-        <Logger name="org.springframework.boot" level="error" additivity="false">
+        <Logger name="org.springframework" level="error" additivity="false">
             <AppenderRef ref="LogToConsole"/>
         </Logger>
-        <Root level="debug">
+        <Root level="warn">
             <AppenderRef ref="LogToConsole" />
             <AppenderRef ref="LogToFile" />
         </Root>
