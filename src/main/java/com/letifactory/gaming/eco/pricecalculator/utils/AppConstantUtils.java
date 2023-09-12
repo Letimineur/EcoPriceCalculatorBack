@@ -35,6 +35,9 @@ public class AppConstantUtils {
         return (labor * pricePerThousandCalories) / (1000.0 * ratioEffortCalorie);
     }
 
+    /**
+     * Map of link between tag item and their real item if tag is used as input
+     */
     public final static Map<String, List<String>> TAG_ITEM_LINK = new HashMap<>(Map.<String, List<String>>ofEntries(
             /*
             Map.entry("Advanced Research",
