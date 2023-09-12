@@ -27,4 +27,8 @@ public class EcoItemServiceImpl {
     public List<EcoItem> getAllItemForType(final EcoItemType type){
         return  this.itemRepository.getAllItemForType(type.getType());
     }
+
+    public List<EcoItem> getAllItemFromList(final List<String> names){
+        return  this.itemRepository.findAllById(names);
+    }
 }

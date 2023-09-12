@@ -41,8 +41,8 @@ public class CalcItemPriceFromRecipeService {
                         final EcoItemType itemType = ecoItemTypeService.findById(type.getValue());
                         logg.debug("Starting pricing for " + itemType);
                         setPriceForItemType(itemType);
-                    } catch ( WrongValueInDataBaseException e) {
-                        logg.error("Exiting price Calculation",e);
+                    } catch (WrongValueInDataBaseException e) {
+                        logg.error("Exiting price Calculation", e);
                         itemToUpdate.clear();
                         unCalculable.clear();
                         isRunning = false;
@@ -67,33 +67,48 @@ public class CalcItemPriceFromRecipeService {
             itemToUpdate.clear();
             for (final EcoItem item : inCalc) {
                 try {
-                setItemPrice(item);
-                }catch (NoSuchElementException e){
-                    logg.error("Cannot set price for Item during delayed process",e);
+                    setItemPrice(item);
+                } catch (NoSuchElementException e) {
+                    logg.error("Cannot set price for Item during delayed process", e);
                 }
             }
         }
     }
 
     private void setPriceForItemType(final EcoItemType type) throws WrongValueInDataBaseException {
-        final List<EcoItem> itemsToUpdate = ecoItemService.getAllNotPricedItemForType(type);
+        final List<EcoItem> itemsToUpdate = ecoItemService.getAllItemForType(type);
         itemsToUpdate.forEach(item -> {
             try {
                 setItemPrice(item);
-            }catch (NoSuchElementException e){
-                logg.error("Cannot set price for Item",e);
+            } catch (NoSuchElementException e) {
+                logg.error("Cannot set price for Item", e);
             }
         });
     }
 
-    private EcoItem setPriceForTagItem(final EcoItem item){
-
-        return item;
+    private EcoItem setPriceForTagItem(final EcoItem item) throws NoSuchElementException {
+        final List<String> itemList = AppConstantUtils.TAG_ITEM_LINK.get(item.getName());
+        if (itemList != null && !itemList.isEmpty()) {
+            final List<Double> allPrice = new ArrayList<>();
+            final List<EcoItem> allItemFromTag = ecoItemService.getAllItemFromList(itemList);
+            allItemFromTag.forEach(itemFromTag -> allPrice.add(itemFromTag.getPrice()));
+            final double price = getLowestPrice(allPrice);
+            item.setPrice(price);
+            logg.info("Price set for TagItem " + item);
+            return ecoItemService.save(item);
+        } else {
+            throw new NoSuchElementException("No Link item exist for this Tag " + item.getName());
+        }
     }
+
+    private static double getLowestPrice(final List<Double> allPrice) {
+        return allPrice.stream().filter(d -> d > 0).mapToDouble(d -> d).min().orElse(0.0);
+    }
+
     public EcoItem setItemPrice(final EcoItem item) throws WrongValueInDataBaseException, NoSuchElementException {
-        if(item.isTag()){
+        if (item.isTag()) {
             return setPriceForTagItem(item);
-        }else {
+        } else {
             final List<CompleteRecipe> completeRecipeList = recipeService.getAllRecipesCratingItem(item.getName());
             if (completeRecipeList.isEmpty()) {
                 throw new NoSuchElementException("No recipe where found for this item " + item);
@@ -113,7 +128,7 @@ public class CalcItemPriceFromRecipeService {
                 final List<Double> allPrice = new ArrayList<>();
                 completeRecipeList
                         .forEach(completeRecipe -> allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
-                result = allPrice.stream().filter(d -> d > 0).mapToDouble(d -> d).min().orElse(0.0);
+                result = getLowestPrice(allPrice);
             }
 
             final double orgPrice = item.getPrice();
@@ -141,7 +156,7 @@ public class CalcItemPriceFromRecipeService {
         final double laborPerOutput = (double) completeRecipe.getRecipe().getLabor() / numberOfOutput;
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
         final double sumOfInputPrice = allInput.stream().reduce(0.0, (calc, input) -> Double.sum(calc,
-                input.getEcoItem().getPrice()),
+                        input.getEcoItem().getPrice()),
                 Double::sum);
 
         if (isNotFeedBackRecipe(completeRecipe)) {
@@ -190,7 +205,7 @@ public class CalcItemPriceFromRecipeService {
                     logg.warn("Bad type order of input " + item + ",it should be =< " + itemToCalc);
                     unCalculable.put(itemToCalc, item);
                 } else {
-                    logg.debug("Add input to delayed price "+item);
+                    logg.debug("Add input to delayed price " + item);
                     itemToUpdate.add(item);
                 }
             }
@@ -208,6 +223,7 @@ public class CalcItemPriceFromRecipeService {
         return (itemPrice + AppConstantUtils.getLaborPrice(laborPerOutput)) * item.getType().getTaxeMultiplicator();
     }
 
+    @Deprecated
     public void showRecipeConflict() {
         recipeService.findAll().forEach(recipe -> {
             final CompleteRecipe completeRecipe = recipeService.getCompleteRecipe(recipe.getName());
