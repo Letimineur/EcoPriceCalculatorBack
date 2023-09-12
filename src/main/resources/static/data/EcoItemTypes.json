@@ -1,8 +1,8 @@
 [
   {
     "type": "special",
-    "taxe":  10.0,
-    "defaultProfits": 10,
+    "taxe":  0.0,
+    "defaultProfits": 0,
     "typeOrder": -1
   },
   {
