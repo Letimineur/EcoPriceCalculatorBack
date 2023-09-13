@@ -1,7 +1,6 @@
 package com.letifactory.gaming.eco.pricecalculator.service.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.letifactory.gaming.eco.pricecalculator.exception.FailedDatabaseInitException;
 import com.letifactory.gaming.eco.pricecalculator.model.dto.CompleteRecipe;
@@ -16,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class InitDatabaseService {
@@ -63,7 +61,10 @@ public class InitDatabaseService {
         this.initRecipes();
 
         //calcItemPriceFromRecipeService.showRecipeConflict();
-        calcItemPriceFromRecipeService.setAllPrice();
+        for (int i = 0; i < 3; i++) {
+            //fully load all prices
+            calcItemPriceFromRecipeService.setAllPrice();
+        }
 
     }
 

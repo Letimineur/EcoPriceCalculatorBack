@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItem;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipe;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoRecipeItem;
+import com.letifactory.gaming.eco.pricecalculator.utils.AppConstantUtils;
 import com.letifactory.gaming.eco.pricecalculator.utils.json.CompleteRecipeDeserializer;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -60,7 +61,10 @@ public class CompleteRecipe {
     }
 
     public double getNumberOfOutput() {
-        return this.getAllOutput().stream().reduce(0.0, (calc, outPut) -> calc + outPut.getQuantity(), Double::sum);
+        //ignore Tailings as Output
+        return this.getAllOutput().stream().reduce(0.0, (calc, outPut) ->
+                        calc + (AppConstantUtils.isTailing(outPut.getEcoItem()) ? 0.0 : outPut.getQuantity()),
+                Double::sum);
     }
 
     public List<EcoRecipeItem> getOutputAlreadyPriced() {

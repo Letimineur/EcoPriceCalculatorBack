@@ -5023,7 +5023,7 @@
   },
   {
     "name": "HewnLogItem",
-    "type": "basic",
+    "type": "special",
     "tag": false,
     "price": 0,
     "imageFile": "UI_Icons_03.png",

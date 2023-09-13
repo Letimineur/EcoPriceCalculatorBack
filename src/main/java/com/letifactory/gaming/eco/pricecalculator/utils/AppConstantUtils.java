@@ -1,6 +1,7 @@
 package com.letifactory.gaming.eco.pricecalculator.utils;
 
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoConfig;
+import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItem;
 import com.letifactory.gaming.eco.pricecalculator.model.entity.EcoItemType;
 
 import java.util.*;
@@ -13,6 +14,17 @@ public class AppConstantUtils {
 
     public final static List<String> FEEDBACK_RECIPE =
             new ArrayList<>(List.of("Plastic", "SyntheticRubber", "Nylon", "Epoxy"));
+
+    public final static List<String> TAILINGS = new ArrayList<>(List.of("WetTailingsItem", "TailingsItem"));
+
+    public static boolean isTailing(final EcoItem item){
+        for(final String tailing:TAILINGS){
+            if (item.getName().equals(tailing)){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     public static String getJsonFilePath(final String fileName) {

@@ -67,6 +67,9 @@ public class CalcItemPriceFromRecipeService {
             itemToUpdate.clear();
             for (final EcoItem item : inCalc) {
                 try {
+                    if (item.getName().equals("MortaredStone")) {
+                        System.out.println("toto");
+                    }
                     setItemPrice(item);
                 } catch (final NoSuchElementException e) {
                     logg.error("Cannot set price for Item during delayed process", e);
@@ -109,6 +112,10 @@ public class CalcItemPriceFromRecipeService {
     }
 
     public EcoItem setItemPrice(final EcoItem item) throws WrongValueInDataBaseException, NoSuchElementException {
+        if(AppConstantUtils.isTailing(item)){
+            logg.info("Tailing don't need to be priced");
+            return item;
+        }
         final List<CompleteRecipe> completeRecipeList = recipeService.getAllRecipesCratingItem(item.getName());
         if (completeRecipeList.isEmpty()) {
             if (item.isTag()) {
@@ -159,6 +166,9 @@ public class CalcItemPriceFromRecipeService {
 
     private double calcPriceForItemFromRecipe(final CompleteRecipe completeRecipe, final EcoItem itemToCalc)
             throws WrongValueInDataBaseException {
+        if (itemToCalc.getName().equals("BasicCircuitItem")) {
+            System.out.println("toto");
+        }
         if (testForUnpricedInput(completeRecipe, itemToCalc)) {
             return 0.0;
         }
@@ -166,16 +176,14 @@ public class CalcItemPriceFromRecipeService {
         final double laborPerOutput = (double) completeRecipe.getRecipe().getLabor() / numberOfOutput;
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
         final double sumOfInputPrice = allInput.stream().reduce(0.0,
-                (calc, input) -> Double.sum(calc, input.getEcoItem().getPrice()) * input.getQuantity(),
+                (calc, input) -> Double.sum(calc, input.getEcoItem().getPrice() * input.getQuantity()),
                 Double::sum);
 
         if (isNotFeedBackRecipe(completeRecipe)) {
             for (final EcoRecipeItem output : completeRecipe.getAllOutput()) {
                 if (output.getEcoItem().getName().equals(itemToCalc.getName())) {
                     final double outputBasePrice = (sumOfInputPrice / numberOfOutput);
-                    return addTaxeAndCaloriesToPrice(outputBasePrice,
-                            laborPerOutput, output.getEcoItem()) *
-                            output.getEcoItem().getType().getProfitsMultiplicator();
+                    return addTaxeAndCaloriesToPrice(outputBasePrice, laborPerOutput, output.getEcoItem());
                 }
             }
         } else {
@@ -185,9 +193,7 @@ public class CalcItemPriceFromRecipeService {
                     final double outputBasePrice = (sumOfInputPrice - completeRecipe.getSumOfPricedOutput())
                             / numberOfOutput;
 
-                    return addTaxeAndCaloriesToPrice(outputBasePrice,
-                            laborPerOutput, output.getEcoItem()) *
-                            output.getEcoItem().getType().getProfitsMultiplicator();
+                    return addTaxeAndCaloriesToPrice(outputBasePrice, laborPerOutput, output.getEcoItem());
                 }
             }
         }
@@ -206,15 +212,17 @@ public class CalcItemPriceFromRecipeService {
             for (final EcoItem item : notPricedInputItem) {
                 System.out.println(completeRecipe.getRecipe().getName());
                 logg.info("Recipe inputItem must be priced first " + item);
-                if (item.getType().getTypeOrder() == 0) {
+                if (item.getType().getTypeOrder() <= 0) {
                     throw new WrongValueInDataBaseException("A raw itemType doesn't have a price. Impossible to " +
                             "calItemPrice because of " + item);
                 } else if (item.getType().getTypeOrder() > itemToCalc.getType().getTypeOrder() &&
                         isNotFeedBackRecipe(completeRecipe)) {
-                    logg.warn("Bad type order of input " + item + ",it should be =< " + itemToCalc);
+                    logg.warn("Bad type order of input " + item + ",it should be =< " + itemToCalc +
+                            ". Impossible to continue pricing");
                     unCalculable.put(itemToCalc, item);
+                    return true;
                 } else {
-                    logg.debug("Add input to delayed price " + item);
+                    logg.info("An input must be priced first" + item);
                     itemToUpdate.add(item);
                 }
             }
@@ -229,7 +237,9 @@ public class CalcItemPriceFromRecipeService {
     }
 
     private double addTaxeAndCaloriesToPrice(final double itemPrice, final double laborPerOutput, final EcoItem item) {
-        return (itemPrice + AppConstantUtils.getLaborPrice(laborPerOutput)) * item.getType().getTaxeMultiplicator();
+        return (itemPrice + AppConstantUtils.getLaborPrice(laborPerOutput)) *
+                item.getType().getTaxeMultiplicator() *
+                item.getType().getProfitsMultiplicator();
     }
 
     @Deprecated
