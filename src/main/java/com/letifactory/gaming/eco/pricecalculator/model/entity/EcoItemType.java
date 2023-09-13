@@ -7,6 +7,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Objects;
+
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -41,5 +43,19 @@ public class EcoItemType {
     @Override
     public String toString() {
         return this.getType() + " order: " + getTypeOrder();
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof final EcoItemType that)) return false;
+        return Double.compare(that.getTaxe(), getTaxe()) == 0 &&
+                Double.compare(that.getDefaultProfits(), getDefaultProfits()) == 0 &&
+                getTypeOrder() == that.getTypeOrder() && getType().equals(that.getType());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getType());
     }
 }

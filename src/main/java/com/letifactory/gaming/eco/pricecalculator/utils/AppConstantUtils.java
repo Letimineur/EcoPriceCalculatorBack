@@ -86,8 +86,9 @@ public class AppConstantUtils {
             /*
             Map.entry("Fish", List.of("")),
             Map.entry("Food", List.of("")),
-            Map.entry("FriedVegetable", List.of("")),
             */
+            Map.entry("FriedVegetable", List.of("FriedCamasItem", "FriedFiddleheadsItem", "FriedHeartsOfPalmItem",
+                    "FriedTaroItem", "FriedTomatoesItem")),
             Map.entry("Fruit", List.of("GiantCactusFruitItem", "HuckleberriesItem", "PapayaItem", "PineappleItem",
                     "PricklyPearFruitItem", "PumpkinItem")),
             //Map.entry("Fuel", List.of("")),

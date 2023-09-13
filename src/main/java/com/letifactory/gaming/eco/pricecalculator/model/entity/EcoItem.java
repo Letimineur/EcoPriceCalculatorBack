@@ -8,6 +8,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Objects;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -41,4 +43,19 @@ public class EcoItem {
                 " price: " + getPrice();
     }
 
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (!(o instanceof final EcoItem ecoItem)) return false;
+        return Double.compare(ecoItem.getPrice(), getPrice()) == 0 &&
+                xPos == ecoItem.xPos && yPos == ecoItem.yPos &&
+                isTag() == ecoItem.isTag() && getName().equals(ecoItem.getName()) &&
+                getType().equals(ecoItem.getType()) &&
+                getImageFile().equals(ecoItem.getImageFile());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
 }

@@ -28,4 +28,15 @@ public class EcoRecipeItem {
     @NotNull
     private boolean isOutput;
 
+    @Override
+    public String toString() {
+        return "EcoRecipeItem{" +
+                "nameId='" + nameId + '\'' +
+                ", ecoRecipe=" + ecoRecipe +
+                ", ecoItem=" + ecoItem +
+                ", quantity=" + quantity +
+                ", reducible=" + reducible +
+                ", isOutput=" + isOutput +
+                '}';
+    }
 }

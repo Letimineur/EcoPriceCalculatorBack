@@ -63,7 +63,7 @@ public class InitDatabaseService {
         this.initRecipes();
 
         //calcItemPriceFromRecipeService.showRecipeConflict();
-        //calcItemPriceFromRecipeService.setAllPrice();
+        calcItemPriceFromRecipeService.setAllPrice();
 
     }
 

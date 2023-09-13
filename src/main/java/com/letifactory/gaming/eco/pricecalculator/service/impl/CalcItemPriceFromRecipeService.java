@@ -29,8 +29,8 @@ public class CalcItemPriceFromRecipeService {
     EcoItemTypeServiceImpl ecoItemTypeService;
 
     private boolean isRunning = false;
-    private HashSet<EcoItem> itemToUpdate = new HashSet<>();
-    private HashMap<EcoItem, EcoItem> unCalculable = new HashMap<>();
+    final private HashSet<EcoItem> itemToUpdate = new HashSet<>();
+    final private HashMap<EcoItem, EcoItem> unCalculable = new HashMap<>();
 
     public void setAllPrice() {
         if (!isRunning) {
@@ -41,7 +41,7 @@ public class CalcItemPriceFromRecipeService {
                         final EcoItemType itemType = ecoItemTypeService.findById(type.getValue());
                         logg.debug("Starting pricing for " + itemType);
                         setPriceForItemType(itemType);
-                    } catch (WrongValueInDataBaseException e) {
+                    } catch (final WrongValueInDataBaseException e) {
                         logg.error("Exiting price Calculation", e);
                         itemToUpdate.clear();
                         unCalculable.clear();
@@ -68,7 +68,7 @@ public class CalcItemPriceFromRecipeService {
             for (final EcoItem item : inCalc) {
                 try {
                     setItemPrice(item);
-                } catch (NoSuchElementException e) {
+                } catch (final NoSuchElementException e) {
                     logg.error("Cannot set price for Item during delayed process", e);
                 }
             }
@@ -80,7 +80,7 @@ public class CalcItemPriceFromRecipeService {
         itemsToUpdate.forEach(item -> {
             try {
                 setItemPrice(item);
-            } catch (NoSuchElementException e) {
+            } catch (final NoSuchElementException e) {
                 logg.error("Cannot set price for Item", e);
             }
         });
@@ -94,8 +94,7 @@ public class CalcItemPriceFromRecipeService {
             allItemFromTag.forEach(itemFromTag -> allPrice.add(itemFromTag.getPrice()));
             final double price = getLowestPrice(allPrice);
             item.setPrice(price);
-            logg.info("Price set for TagItem " + item);
-            return ecoItemService.save(item);
+            return saveItem(item);
         } else {
             throw new NoSuchElementException("No Link item exist for this Tag " + item.getName());
         }
@@ -105,46 +104,57 @@ public class CalcItemPriceFromRecipeService {
         return allPrice.stream().filter(d -> d > 0).mapToDouble(d -> d).min().orElse(0.0);
     }
 
+    private static double getAveragePrice(final List<Double> allPrice) {
+        return allPrice.stream().reduce(Double::sum).get() / allPrice.size();
+    }
+
     public EcoItem setItemPrice(final EcoItem item) throws WrongValueInDataBaseException, NoSuchElementException {
-        if (item.isTag()) {
-            return setPriceForTagItem(item);
-        } else {
-            final List<CompleteRecipe> completeRecipeList = recipeService.getAllRecipesCratingItem(item.getName());
-            if (completeRecipeList.isEmpty()) {
+        final List<CompleteRecipe> completeRecipeList = recipeService.getAllRecipesCratingItem(item.getName());
+        if (completeRecipeList.isEmpty()) {
+            if (item.isTag()) {
+                return setPriceForTagItem(item);
+            } else {
                 throw new NoSuchElementException("No recipe where found for this item " + item);
             }
-            double result = 0.0;
-            // special case of BarrelItem that only need base recipe to be calculated
-            if (item.getName().equals("BarrelItem")) {
-                logg.debug("Special calc for Barrel item price");
-                for (final CompleteRecipe cptRecipe : completeRecipeList) {
-                    if (cptRecipe.getRecipe().getName().equals("Barrel")) {
-                        result = calcPriceForItemFromRecipe(cptRecipe, item);
-                        logg.debug("Barrel will be priced at " + result);
-                        break;
-                    }
-                }
-            } else {
-                final List<Double> allPrice = new ArrayList<>();
-                completeRecipeList
-                        .forEach(completeRecipe -> allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
-                result = getLowestPrice(allPrice);
-            }
-
-            final double orgPrice = item.getPrice();
-            item.setPrice(0.0);
-            item.setPrice(result);
-            if (item.getPrice() == 0) {
-                logg.warn(item.getName() +
-                        ": Item price cannot be set because calcul send 0 as result");
-            } else {
-                logg.info("Price set for item " + item);
-                return ecoItemService.save(item);
-            }
-
-            item.setPrice(orgPrice);
-            return item;
         }
+        double result = 0.0;
+        // special case of BarrelItem that only need base recipe to be calculated
+        if (item.getName().equals("BarrelItem")) {
+            logg.debug("Special calc for Barrel item price");
+            for (final CompleteRecipe cptRecipe : completeRecipeList) {
+                if (cptRecipe.getRecipe().getName().equals("Barrel")) {
+                    result = calcPriceForItemFromRecipe(cptRecipe, item);
+                    logg.debug("Barrel will be priced at " + result);
+                    break;
+                }
+            }
+        } else {
+            final List<Double> allPrice = new ArrayList<>();
+            completeRecipeList
+                    .forEach(completeRecipe -> allPrice.add(calcPriceForItemFromRecipe(completeRecipe, item)));
+            result = getLowestPrice(allPrice);
+        }
+
+        final double orgPrice = item.getPrice();
+        item.setPrice(0.0);
+        item.setPrice(result);
+        if (item.getPrice() == 0) {
+            logg.warn(item.getName() +
+                    ": Item price cannot be set because calcul send 0 as result");
+        } else {
+            return saveItem(item);
+        }
+        item.setPrice(orgPrice);
+        logg.warn(item + " price didn't get modified");
+        return item;
+    }
+
+
+    private EcoItem saveItem(final EcoItem item) {
+        item.setPrice(Math.round(item.getPrice() * 100.0) / 100.0);
+        final EcoItem retItem = ecoItemService.save(item);
+        logg.info("Price set for " + (retItem.isTag() ? "tagItem " : "item ") + retItem);
+        return retItem;
     }
 
     private double calcPriceForItemFromRecipe(final CompleteRecipe completeRecipe, final EcoItem itemToCalc)
@@ -155,15 +165,14 @@ public class CalcItemPriceFromRecipeService {
         final double numberOfOutput = completeRecipe.getNumberOfOutput();
         final double laborPerOutput = (double) completeRecipe.getRecipe().getLabor() / numberOfOutput;
         final List<EcoRecipeItem> allInput = completeRecipe.getAllInput();
-        final double sumOfInputPrice = allInput.stream().reduce(0.0, (calc, input) -> Double.sum(calc,
-                        input.getEcoItem().getPrice()),
+        final double sumOfInputPrice = allInput.stream().reduce(0.0,
+                (calc, input) -> Double.sum(calc, input.getEcoItem().getPrice()) * input.getQuantity(),
                 Double::sum);
 
         if (isNotFeedBackRecipe(completeRecipe)) {
             for (final EcoRecipeItem output : completeRecipe.getAllOutput()) {
                 if (output.getEcoItem().getName().equals(itemToCalc.getName())) {
-                    final double outputBasePrice = (sumOfInputPrice *
-                            output.getQuantity() / numberOfOutput) / output.getQuantity();
+                    final double outputBasePrice = (sumOfInputPrice / numberOfOutput);
                     return addTaxeAndCaloriesToPrice(outputBasePrice,
                             laborPerOutput, output.getEcoItem()) *
                             output.getEcoItem().getType().getProfitsMultiplicator();
@@ -173,8 +182,8 @@ public class CalcItemPriceFromRecipeService {
             final List<EcoRecipeItem> notPricedOutput = completeRecipe.geNotPricedOutput();
             for (final EcoRecipeItem output : notPricedOutput) {
                 if (output.getEcoItem().getName().equals(itemToCalc.getName())) {
-                    final double outputBasePrice = ((sumOfInputPrice - completeRecipe.getSumOfPricedOutput()) *
-                            output.getQuantity() / numberOfOutput) / output.getQuantity();
+                    final double outputBasePrice = (sumOfInputPrice - completeRecipe.getSumOfPricedOutput())
+                            / numberOfOutput;
 
                     return addTaxeAndCaloriesToPrice(outputBasePrice,
                             laborPerOutput, output.getEcoItem()) *
@@ -183,7 +192,7 @@ public class CalcItemPriceFromRecipeService {
             }
         }
         // Should not go here
-        logg.warn("No item found in output. Should not happen. Recipe: " + completeRecipe.getRecipe().getName() +
+        logg.error("No item found in output. Should not happen. Recipe: " + completeRecipe.getRecipe().getName() +
                 " for " + itemToCalc);
         return 0.0;
     }
